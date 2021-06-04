@@ -52,7 +52,7 @@ class Solution:
 
 
 if __name__ == "__main__":
-    nums = [0, 1, 0, 3, 12]
+    nums = [1, 0]
     solution = Solution()
     solution.moveZeroes(nums)
     print(nums)

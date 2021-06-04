@@ -28,7 +28,7 @@ class Solution:
         O(2n)
         """
         tmp = []
-        i, j = 0, 0  # i is left walker, j is right wlker
+        i, j = 0, 0  # i is left walker, j is right walker
 
         # Merge left and right
         while i < m and j < n:
