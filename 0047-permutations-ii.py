@@ -23,13 +23,15 @@ class Solution:
         """Preorder traversal"""
         # base case
         # done with permutation when length is same as length of nums
-        if len(nums) == len(permutation) and permutation not in output:
-            # make new copy or else we use ref
-            output.append(list(permutation))
+        if len(nums) == len(permutation):
+            # check for unique permutation
+            if permutation not in output:
+                # make new copy or else we use ref
+                output.append(list(permutation))
         else:
             for i in range(len(nums)):
 
-                # visit root
+                # visit node
                 if i not in visited:
                     permutation.append(nums[i])
                     visited.add(i)
@@ -37,10 +39,8 @@ class Solution:
                     # visit children
                     self.dfs(nums, visited, permutation, output)
 
-                    # remove visited when we get out so we can permute
+                    # undo so we can permute others
                     visited.remove(i)
-
-                    # undo to get next slot for permutation
                     permutation.pop()
 
 

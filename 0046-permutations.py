@@ -29,7 +29,7 @@ class Solution:
         else:
             for num in nums:
 
-                # visit root
+                # visit node
                 if num not in visited:
                     permutation.append(num)
                     visited.add(num)
@@ -37,10 +37,8 @@ class Solution:
                     # visit children
                     self.dfs(nums, visited, permutation, output)
 
-                    # remove visited when we get out so we can permute
+                    # undo so we can permute others
                     visited.remove(num)
-
-                    # undo to get next slot for permutation
                     permutation.pop()
 
 
