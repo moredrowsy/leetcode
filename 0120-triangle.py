@@ -14,10 +14,10 @@ class Solution:
     def minimumTotal(self, triangle: List[List[int]]) -> int:
         if triangle:
             row = len(triangle)
-            ans = [[0] * len(triangle[i]) for i in range(row)]
+            dp = [[0] * len(triangle[i]) for i in range(row)]
 
             # init
-            ans[0][0] = triangle[0][0]
+            dp[0][0] = triangle[0][0]
 
             for i in range(1, row):
                 col = len(triangle[i])
@@ -25,16 +25,16 @@ class Solution:
                 for j in range(col):
                     # left edge
                     if j == 0:
-                        ans[i][j] = triangle[i][j] + ans[i-1][j]
+                        dp[i][j] = triangle[i][j] + dp[i-1][j]
                     # right edge
                     elif j == len(triangle[i]) - 1:
-                        ans[i][j] = triangle[i][j] + ans[i-1][j-1]
+                        dp[i][j] = triangle[i][j] + dp[i-1][j-1]
                     else:
-                        ans[i][j] = triangle[i][j] + min(
-                            ans[i-1][j], ans[i-1][j-1]
+                        dp[i][j] = triangle[i][j] + min(
+                            dp[i-1][j], dp[i-1][j-1]
                         )
 
-            return min(ans[row-1])
+            return min(dp[row-1])
         else:
             return 0
 
