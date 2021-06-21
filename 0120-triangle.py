@@ -14,7 +14,7 @@ class Solution:
     def minimumTotal(self, triangle: List[List[int]]) -> int:
         if triangle:
             row = len(triangle)
-            ans = [[0]*row for _ in range(row)]
+            ans = [[0] * len(triangle[i]) for i in range(row)]
 
             # init
             ans[0][0] = triangle[0][0]
