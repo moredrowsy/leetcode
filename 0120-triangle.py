@@ -31,8 +31,6 @@ class Solution:
                         )
 
             return min(triangle[rows-1])
-        else:
-            return 0
 
 
 if __name__ == "__main__":
