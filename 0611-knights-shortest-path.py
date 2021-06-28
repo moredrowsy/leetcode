@@ -32,6 +32,7 @@ class Solution:
     """
 
     def shortestPath(self, grid, source, destination):
+        # 360 degree direcions coverage for knight moves
         directions = [
             (-2, -1), (-2, 1), (-1, 2), (1, 2),
             (2, 1), (2, -1), (1, -2), (-1, -2),

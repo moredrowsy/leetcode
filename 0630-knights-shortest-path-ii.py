@@ -20,10 +20,8 @@ class Solution:
         if grid is None or not grid or len(grid) == 0 or len(grid[0]) == 0:
             return -1
 
-        directions = [
-            (-2, -1), (-2, 1), (-1, 2), (1, 2),
-            (2, 1), (2, -1), (1, -2), (-1, -2),
-        ]
+        # 180 degree directions coverage for knight moves for checking dp
+        directions = [(-1, -2), (1, -2), (-2, -1), (2, -1)]
 
         n, m = len(grid), len(grid[0])
         dp = [[float("inf")] * m for _ in range(n)]
