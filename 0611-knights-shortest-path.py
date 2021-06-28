@@ -1,6 +1,7 @@
 """
 611. Knight Shortest Path
 Medium
+https://leetcode.com/problems/minimum-knight-moves/
 https://www.lintcode.com/problem/611/
 
 Given a knight in a chessboard (a binary matrix with 0 as empty and 1 as barrier) with a source position, find the shortest path to a destination position, return the length of the route.
@@ -50,7 +51,7 @@ class Solution:
                 next_x, next_y = x + dx, y + dy
                 if (next_x, next_y) in distance:
                     continue
-                if not self.is_valid(next_x, next_y, grid):
+                if not self.is_valid(grid, next_x, next_y):
                     continue
 
                 distance[(next_x, next_y)] = distance[(x, y)] + 1
@@ -58,7 +59,7 @@ class Solution:
 
         return -1
 
-    def is_valid(self, x, y, grid):
+    def is_valid(self, grid, x, y):
         if x < 0 or x >= len(grid) or y < 0 or y >= len(grid[0]):
             return False
 
