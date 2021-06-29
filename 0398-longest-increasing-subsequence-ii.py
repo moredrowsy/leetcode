@@ -18,39 +18,29 @@ class Solution:
     @return: an integer
     """
 
-    directions = [(1, 0), (0, 1), (0, -1), (-1, 0)]
+    directions = [(0, 1), (0, -1), (-1, 0), (1, 0)]
 
     def longestContinuousIncreasingSubsequence2(self, matrix):
-        if matrix:
-            n, m = len(matrix), len(matrix[0])
-            dp = [[0] * m for _ in range(n)]
-
-            for i in range(n):
-                for j in range(m):
-                    self.search(matrix, dp, i, j)
-
-            return max(max(row) for row in dp)
-        else:
+        if matrix is None or not matrix:
             return 0
 
-    def search(self, matrix, dp, x, y):
-        # base case
-        if dp[x][y] != 0:
-            return dp[x][y]
+        n, m = len(matrix), len(matrix[0])
+        dp = [[1] * m for _ in range(n)]
+        points = [(x, y) for x in range(n) for y in range(m)]
+        points = sorted(points, key=lambda p: matrix[p[0]][p[1]])
 
-        longest = 1
-        for dx, dy in self.directions:
-            next_x, next_y = x + dx, y + dy
+        for x, y in points:
+            for dx, dy in self.directions:
+                next_x, next_y = x + dx, y + dy
 
-            if not self.is_valid(matrix, next_x, next_y):
-                continue
-            if matrix[x][y] >= matrix[next_x][next_y]:
-                continue
+                if not self.is_valid(matrix, next_x, next_y):
+                    continue
+                if matrix[next_x][next_y] >= matrix[x][y]:
+                    continue
 
-            longest = max(longest, self.search(matrix, dp, next_x, next_y) + 1)
+                dp[x][y] = max(dp[x][y], dp[next_x][next_y] + 1)
 
-        dp[x][y] = longest
-        return dp[x][y]
+        return max(max(row) for row in dp)
 
     def is_valid(self, grid, x, y):
         if x < 0 or x >= len(grid) or y < 0 or y >= len(grid[0]):
@@ -71,10 +61,12 @@ if __name__ == "__main__":
     answer = solution.longestContinuousIncreasingSubsequence2(matrix)
     print(answer)
 
-    matrix = [
-        [1, 2],
-        [5, 3]
-    ]
+    matrix = [[1, 2], [5, 3]]
+    solution = Solution()
+    answer = solution.longestContinuousIncreasingSubsequence2(matrix)
+    print(answer)
+
+    matrix = [[1, 5, 3], [4, 10, 9], [2, 8, 7]]
     solution = Solution()
     answer = solution.longestContinuousIncreasingSubsequence2(matrix)
     print(answer)
