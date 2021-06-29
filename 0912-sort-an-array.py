@@ -4,6 +4,11 @@ Medium
 https://leetcode.com/problems/sort-an-array/
 
 Given an array of integers nums, sort the array in ascending order.
+
+Constraints:
+
+1 <= nums.length <= 5 * 104
+-5 * 104 <= nums[i] <= 5 * 104
 """
 from typing import List
 

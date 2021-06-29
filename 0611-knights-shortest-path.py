@@ -50,6 +50,7 @@ class Solution:
 
             for dx, dy in directions:
                 next_x, next_y = x + dx, y + dy
+
                 if (next_x, next_y) in distance:
                     continue
                 if not self.is_valid(grid, next_x, next_y):

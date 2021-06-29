@@ -22,7 +22,6 @@ class Solution:
 
     def longestContinuousIncreasingSubsequence2(self, matrix):
         if matrix:
-
             n, m = len(matrix), len(matrix[0])
             dp = [[0] * m for _ in range(n)]
 

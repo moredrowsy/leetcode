@@ -8,6 +8,13 @@ Given an array of integers nums sorted in ascending order, find the starting and
 If target is not found in the array, return [-1, -1].
 
 You must write an algorithm with O(log n) runtime complexity.
+
+Constraints:
+
+0 <= nums.length <= 105
+-109 <= nums[i] <= 109
+nums is a non-decreasing array.
+-109 <= target <= 109
 """
 from typing import List
 
@@ -43,7 +50,7 @@ class Solution:
             return right
         else:
             return -1
-    
+
     def bsearch_last_iter(self, nums: List[int], target) -> int:
         left = 0
         right = len(nums) - 1
@@ -91,13 +98,12 @@ class Solution:
         else:
             return -1
 
-
     def bsearch_last_re(self, nums: List[int], target: int, left: int, right: int) -> int:
         if left + 1 < right:
             mid = (left + right) // 2
 
             if nums[mid] == target:
-                return self.bsearch_last_re(nums,target, mid, right )
+                return self.bsearch_last_re(nums, target, mid, right)
             elif nums[mid] < target:
                 return self.bsearch_last_re(nums, target, mid, right)
             else:

@@ -13,6 +13,12 @@ Confused why the returned value is an integer but your answer is an array?
 
 Note that the input array is passed in by reference, which means a modification to the input array will be known to the caller as well.
 
+Constraints:
+
+0 <= nums.length <= 3 * 104
+-100 <= nums[i] <= 100
+nums is sorted in non-decreasing order.
+
 NOTE
 ----
 Do not need to actually remove duplicates as long as the unique values are in front.

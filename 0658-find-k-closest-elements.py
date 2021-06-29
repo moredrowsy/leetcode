@@ -9,6 +9,13 @@ An integer a is closer to x than an integer b if:
 
 |a - x| < |b - x|, or
 |a - x| == |b - x| and a < b
+
+Constraints:
+
+1 <= k <= arr.length
+1 <= arr.length <= 104
+arr is sorted in ascending order.
+-104 <= arr[i], x <= 104
 """
 from typing import List
 
@@ -45,7 +52,10 @@ class Solution:
         return self.find_closet_to_x(arr, x, left, right)
 
     def find_closet_to_x(self, arr, x, left, right):
-        """Find index closet to X from constraints"""
+        """
+        Find index closet to X from constraints
+        Assume that either left or right is valid index based on constraints
+        """
         if left < 0:
             return right
         elif right >= len(arr):
