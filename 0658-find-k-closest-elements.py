@@ -26,9 +26,7 @@ class Solution:
         right = left + 1
 
         while right - left <= k:
-            closet = self.find_closet_to_x(arr, x, left, right)
-
-            if closet == left:
+            if self.find_closest_to_x(arr, x, left, right) == left:
                 left -= 1
             else:
                 right += 1
@@ -36,7 +34,11 @@ class Solution:
         return arr[left+1:right]
 
     def find_left_bound_to_x(self, arr, x):
-        """Find the left most closet index to x"""
+        """
+        Find the left boundary index to x.
+        If there are duplicate x's, it will NOT be the leftmost but +1 to
+        the leftmost index based on business logic.
+        """
         left, right = 0, len(arr) - 1
 
         while left + 1 < right:
@@ -49,12 +51,12 @@ class Solution:
             else:
                 right = mid
 
-        return self.find_closet_to_x(arr, x, left, right)
+        return self.find_closest_to_x(arr, x, left, right)
 
-    def find_closet_to_x(self, arr, x, left, right):
+    def find_closest_to_x(self, arr, x, left, right):
         """
-        Find index closet to X from constraints
-        Assume that either left or right is valid index based on constraints
+        Find index closet to X from constraints.
+        Assume that either left or right is valid index based on constraints.
         """
         if left < 0:
             return right

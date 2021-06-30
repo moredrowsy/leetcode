@@ -18,27 +18,26 @@ class Solution:
     @return: an integer
     """
 
-    directions = [(0, 1), (0, -1), (-1, 0), (1, 0)]
-
     def longestContinuousIncreasingSubsequence2(self, matrix):
         if matrix is None or not matrix:
             return 0
 
+        directions = [(0, 1), (0, -1), (-1, 0), (1, 0)]
         n, m = len(matrix), len(matrix[0])
         dp = [[1] * m for _ in range(n)]
         points = [(x, y) for x in range(n) for y in range(m)]
         points = sorted(points, key=lambda p: matrix[p[0]][p[1]])
 
         for x, y in points:
-            for dx, dy in self.directions:
-                next_x, next_y = x + dx, y + dy
+            for dx, dy in directions:
+                prev_x, prev_y = x + dx, y + dy
 
-                if not self.is_valid(matrix, next_x, next_y):
+                if not self.is_valid(matrix, prev_x, prev_y):
                     continue
-                if matrix[next_x][next_y] >= matrix[x][y]:
+                if matrix[prev_x][prev_y] >= matrix[x][y]:
                     continue
 
-                dp[x][y] = max(dp[x][y], dp[next_x][next_y] + 1)
+                dp[x][y] = max(dp[x][y], dp[prev_x][prev_y] + 1)
 
         return max(max(row) for row in dp)
 
