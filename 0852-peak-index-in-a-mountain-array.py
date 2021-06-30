@@ -25,12 +25,30 @@ class Solution:
         return self.peak_index_re(arr, 0, len(arr)-1)
 
     def peak_index_linear(self, arr: List[int]) -> int:
+        """
+        Time Complexity
+        ---------------
+        O(n)
+
+        Space Complexity
+        ----------------
+        O(1)
+        """
         i = 1
         while arr[i] < arr[i+1]:
             i += 1
         return i
 
     def peak_index_re(self, arr: List[int], left: int, right: int) -> int:
+        """
+        Time Complexity
+        ---------------
+        O(log n)
+
+        Space Complexity
+        ----------------
+        O(1)
+        """
         if left + 1 < right:
             mid = (left + right) // 2
 
@@ -54,6 +72,15 @@ class Solution:
             return left
 
     def peak_index_iter(self, arr: List[int]) -> int:
+        """
+        Time Complexity
+        ---------------
+        O(log n)
+
+        Space Complexity
+        ----------------
+        O(1)
+        """
         left = 0
         right = len(arr) - 1
 

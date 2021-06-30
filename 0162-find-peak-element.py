@@ -25,6 +25,15 @@ class Solution:
         return self.find_peak_re(nums, 0, len(nums)-1)
 
     def find_peak_re(self, nums: List[int], left: int, right: int):
+        """
+        Time Complexity
+        ---------------
+        O(log n)
+
+        Space Complexity
+        ----------------
+        O(1)
+        """
         if left + 1 < right:
             mid = (left + right) // 2
 
@@ -48,6 +57,15 @@ class Solution:
             return left
 
     def find_peak_iter(self, nums: List[int]):
+        """
+        Time Complexity
+        ---------------
+        O(log n)
+
+        Space Complexity
+        ----------------
+        O(1)
+        """
         left = 0
         right = len(nums) - 1
 

@@ -24,6 +24,15 @@ class Solution:
         return self.bsearch_first_last_re(nums, target)
 
     def bsearch_first_last_iter(self, nums: List[int], target: int) -> List[int]:
+        """
+        Time Complexity
+        ---------------
+        O(log n)
+
+        Space Complexity
+        ----------------
+        O(1)
+        """
         if nums is None or len(nums) == 0:
             return [-1, -1]
 
@@ -32,6 +41,15 @@ class Solution:
         return [first, end]
 
     def bsearch_first_iter(self, nums: List[int], target) -> int:
+        """
+        Time Complexity
+        ---------------
+        O(log n)
+
+        Space Complexity
+        ----------------
+        O(1)
+        """
         left = 0
         right = len(nums) - 1
 
@@ -52,6 +70,15 @@ class Solution:
             return -1
 
     def bsearch_last_iter(self, nums: List[int], target) -> int:
+        """
+        Time Complexity
+        ---------------
+        O(log n)
+
+        Space Complexity
+        ----------------
+        O(1)
+        """
         left = 0
         right = len(nums) - 1
 
@@ -73,6 +100,15 @@ class Solution:
             return -1
 
     def bsearch_first_last_re(self, nums: List[int], target: int) -> List[int]:
+        """
+        Time Complexity
+        ---------------
+        O(log n)
+
+        Space Complexity
+        ----------------
+        O(1)
+        """
         if nums is None or len(nums) == 0:
             return [-1, -1]
 
@@ -81,6 +117,15 @@ class Solution:
         return [first, last]
 
     def bsearch_first_re(self, nums: List[int], target: int, left: int, right: int) -> int:
+        """
+        Time Complexity
+        ---------------
+        O(log n)
+
+        Space Complexity
+        ----------------
+        O(1)
+        """
         if left + 1 < right:
             mid = (left + right) // 2
 
@@ -99,6 +144,15 @@ class Solution:
             return -1
 
     def bsearch_last_re(self, nums: List[int], target: int, left: int, right: int) -> int:
+        """
+        Time Complexity
+        ---------------
+        O(log n)
+
+        Space Complexity
+        ----------------
+        O(1)
+        """
         if left + 1 < right:
             mid = (left + right) // 2
 
