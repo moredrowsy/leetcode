@@ -31,6 +31,9 @@ class Solution:
         ----------------
         O(1)
         """
+        if L is None or not L:
+            return 0
+
         left, right = 1, max(L)
 
         while left + 1 < right:
@@ -51,7 +54,7 @@ class Solution:
         else:
             return 0
 
-    def pieces_of_wood(self, l, length):
+    def pieces_of_wood(self, L, length):
         pieces = 0
         for l in L:
             pieces += (l // length)
