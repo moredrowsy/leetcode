@@ -31,10 +31,10 @@ class Solution:
             for i in range(n):
                 if not grid[i][j]:
                     for dx, dy in directions:
-                        next_x, next_y = i + dx, j + dy
+                        prev_x, prev_y = i + dx, j + dy
 
-                        if self.is_valid(grid, next_x, next_y):
-                            dp[i][j] = min(dp[i][j], dp[next_x][next_y] + 1)
+                        if self.is_valid(grid, prev_x, prev_y):
+                            dp[i][j] = min(dp[i][j], dp[prev_x][prev_y] + 1)
 
         return -1 if dp[n-1][m-1] == float("inf") else dp[n-1][m-1]
 
