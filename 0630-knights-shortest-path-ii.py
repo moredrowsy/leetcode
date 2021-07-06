@@ -27,14 +27,15 @@ class Solution:
         dp = [[float("inf")] * m for _ in range(n)]
         dp[0][0] = 0
 
-        for j in range(1, m):
-            for i in range(n):
-                if not grid[i][j]:
+        # Loop vertically
+        for y in range(1, m):
+            for x in range(n):
+                if grid[x][y] == 0:
                     for dx, dy in directions:
-                        prev_x, prev_y = i + dx, j + dy
+                        prev_x, prev_y = x + dx, y + dy
 
                         if self.is_valid(grid, prev_x, prev_y):
-                            dp[i][j] = min(dp[i][j], dp[prev_x][prev_y] + 1)
+                            dp[x][y] = min(dp[x][y], dp[prev_x][prev_y] + 1)
 
         return -1 if dp[n-1][m-1] == float("inf") else dp[n-1][m-1]
 
