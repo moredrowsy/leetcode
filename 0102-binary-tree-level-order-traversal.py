@@ -12,19 +12,39 @@ The number of nodes in the tree is in the range [0, 2000].
 """
 from typing import List
 
-# Definition for a binary tree node.
+
+def build_tree_node(values):
+    from collections import deque
+    val_queue = deque(values)
+    root_node = TreeNode(val_queue.popleft())
+    node_queue = deque([root_node])
+
+    while val_queue:
+        node = node_queue.popleft()
+        node.left = TreeNode(val_queue.popleft())
+        node.right = TreeNode(val_queue.popleft())
+
+        node_queue.append(node.left)
+        node_queue.append(node.right)
+
+    return root_node
 
 
 class TreeNode:
+    """Definition for a binary tree node."""
+
     def __init__(self, val=0, left=None, right=None):
         self.val = val
         self.left = left
         self.right = right
 
+    def __repr__(self) -> str:
+        return f"{self.val}"
+
 
 class Solution:
     def levelOrder(self, root: TreeNode) -> List[List[int]]:
-        tree_output = []
+        output = []
 
         if root:
             queue = [root]
@@ -42,48 +62,15 @@ class Solution:
                     if node.right:
                         queue.append(node.right)
 
-                tree_output.append(level_output)
+                output.append(level_output)
+                level_output = []
 
-        return tree_output
-
-    def levelOrder1(self, root: TreeNode) -> List[List[int]]:
-        final_output = []
-        queue = []
-
-        if root:
-            # init
-            queue.append(root)
-            final_output.append([root.val])
-            right_most = root
-            level_output = []
-
-            while len(queue) != 0:
-                node = queue.pop(0)
-
-                if node.left:
-                    queue.append(node.left)
-                    level_output.append(node.left.val)
-                if node.right:
-                    queue.append(node.right)
-                    level_output.append(node.right.val)
-
-                # check if this node is the right most node
-                if node == right_most:
-                    # add level output to final output if it is not empty
-                    if level_output:
-                        final_output.append(level_output)
-                        level_output = []
-
-                    # find new right most node
-                    if node.right:
-                        right_most = node.right
-                    elif node.left:
-                        right_most = node.left
-                    elif len(queue):
-                        right_most = queue[-1]
-
-        return final_output
+        return output
 
 
 if __name__ == "__main__":
-    print()
+    root = [3, 9, 20, None, None, 15, 7]
+    root = build_tree_node(root)
+    solution = Solution()
+    answer = solution.levelOrder(root)
+    print(answer)
