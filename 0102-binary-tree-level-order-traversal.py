@@ -13,21 +13,21 @@ The number of nodes in the tree is in the range [0, 2000].
 from typing import List
 
 
-def build_tree_node(values):
+def build_tree_from_tree_nodes(nodes):
     from collections import deque
-    val_queue = deque(values)
-    root_node = TreeNode(val_queue.popleft())
-    node_queue = deque([root_node])
+    queue = deque(nodes)
+    root = queue.popleft()
+    roots = deque([root])
 
-    while val_queue:
-        node = node_queue.popleft()
-        node.left = TreeNode(val_queue.popleft())
-        node.right = TreeNode(val_queue.popleft())
+    while queue:
+        node = roots.popleft()
+        node.left = queue.popleft()
+        node.right = queue.popleft()
 
-        node_queue.append(node.left)
-        node_queue.append(node.right)
+        roots.append(node.left)
+        roots.append(node.right)
 
-    return root_node
+    return root
 
 
 class TreeNode:
@@ -69,8 +69,9 @@ class Solution:
 
 
 if __name__ == "__main__":
-    root = [3, 9, 20, None, None, 15, 7]
-    root = build_tree_node(root)
+    nodes = [3, 9, 20, None, None, 15, 7]
+    nodes = [TreeNode(node) for node in nodes]
+    root = build_tree_from_tree_nodes(nodes)
     solution = Solution()
     answer = solution.levelOrder(root)
     print(answer)

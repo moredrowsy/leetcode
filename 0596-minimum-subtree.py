@@ -14,21 +14,21 @@ class TreeNode:
 """
 
 
-def build_tree_node(values):
+def build_tree_from_tree_nodes(nodes):
     from collections import deque
-    val_queue = deque(values)
-    root_node = TreeNode(val_queue.popleft())
-    node_queue = deque([root_node])
+    queue = deque(nodes)
+    root = queue.popleft()
+    roots = deque([root])
 
-    while val_queue:
-        node = node_queue.popleft()
-        node.left = TreeNode(val_queue.popleft())
-        node.right = TreeNode(val_queue.popleft())
+    while queue:
+        node = roots.popleft()
+        node.left = queue.popleft()
+        node.right = queue.popleft()
 
-        node_queue.append(node.left)
-        node_queue.append(node.right)
+        roots.append(node.left)
+        roots.append(node.right)
 
-    return root_node
+    return root
 
 
 class TreeNode:
@@ -50,30 +50,31 @@ class Solution:
 
     def __init__(self) -> None:
         self.min_root = None
-        self.min_val = float('inf')
+        self.min_sum = float('inf')
 
     def findSubtree(self, root):
-        self.getTreeSum(root)
+        self.get_tree_sum(root)
         return self.min_root
 
-    def getTreeSum(self, root):
+    def get_tree_sum(self, root):
         if root is None:
             return 0
 
-        left_weight = self.getTreeSum(root.left)
-        right_weight = self.getTreeSum(root.right)
-        root_weight = left_weight + right_weight + root.val
+        left_sum = self.get_tree_sum(root.left)
+        right_sum = self.get_tree_sum(root.right)
+        root_sum = left_sum + right_sum + root.val
 
-        if root_weight < self.min_val:
+        if root_sum < self.min_sum:
             self.min_root = root
-            self.min_val = root_weight
+            self.min_sum = root_sum
 
-        return root_weight
+        return root_sum
 
 
 if __name__ == "__main__":
-    root = [1, -5, 2, 1, 2, -4, -5]
-    root = build_tree_node(root)
+    nodes = [1, -5, 2, 1, 2, -4, -5]
+    nodes = [TreeNode(node) for node in nodes]
+    root = build_tree_from_tree_nodes(nodes)
     solution = Solution()
     answer = solution.findSubtree(root)
     print(answer)
