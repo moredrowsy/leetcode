@@ -61,7 +61,7 @@ class Solution:
 
 if __name__ == "__main__":
     nodes = [4, 3, 7, None, None, 5, 6]
-    nodes = [TreeNode(node) for node in nodes]
+    nodes = [TreeNode(node) if node else None for node in nodes]
     tree = TreeNode.get_tree_from_treenode_list(nodes)
     a, b = nodes[5], nodes[6]
     answer = Solution().lowestCommonAncestor3(tree, a, b)
