@@ -64,21 +64,17 @@ class Solution:
 
 if __name__ == "__main__":
     nums = [1, 2, 3]
-    solution = Solution()
-    answer = solution.largestDivisibleSubset(nums)
+    answer = Solution().largestDivisibleSubset(nums)
     print(answer)
 
     nums = [1, 2, 4, 8]
-    solution = Solution()
-    answer = solution.largestDivisibleSubset(nums)
+    answer = Solution().largestDivisibleSubset(nums)
     print(answer)
 
     nums = [4, 8, 10, 240]
-    solution = Solution()
-    answer = solution.largestDivisibleSubset(nums)
+    answer = Solution().largestDivisibleSubset(nums)
     print(answer)
 
     nums = [2, 3, 4, 8]
-    solution = Solution()
-    answer = solution.largestDivisibleSubset(nums)
+    answer = Solution().largestDivisibleSubset(nums)
     print(answer)

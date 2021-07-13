@@ -67,6 +67,5 @@ if __name__ == "__main__":
     nums1, m = [1, 2, 3, 0, 0, 0], 3
     nums2, n = [2, 5, 6], 3
 
-    solution = Solution()
-    solution.merge(nums1, m, nums2, n)
+    Solution().merge(nums1, m, nums2, n)
     print(nums1)

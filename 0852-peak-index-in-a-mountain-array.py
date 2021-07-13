@@ -110,26 +110,21 @@ class Solution:
 
 if __name__ == "__main__":
     arr = [0, 1, 0]
-    solution = Solution()
-    answer = solution.peakIndexInMountainArray(arr)
+    answer = Solution().peakIndexInMountainArray(arr)
     print(answer)
 
     arr = [0, 2, 1, 0]
-    solution = Solution()
-    answer = solution.peakIndexInMountainArray(arr)
+    answer = Solution().peakIndexInMountainArray(arr)
     print(answer)
 
     arr = [0, 10, 5, 2]
-    solution = Solution()
-    answer = solution.peakIndexInMountainArray(arr)
+    answer = Solution().peakIndexInMountainArray(arr)
     print(answer)
 
     arr = [3, 4, 5, 1]
-    solution = Solution()
-    answer = solution.peakIndexInMountainArray(arr)
+    answer = Solution().peakIndexInMountainArray(arr)
     print(answer)
 
     arr = [24, 69, 100, 99, 79, 78, 67, 36, 26, 19]
-    solution = Solution()
-    answer = solution.peakIndexInMountainArray(arr)
+    answer = Solution().peakIndexInMountainArray(arr)
     print(answer)

@@ -80,11 +80,9 @@ class Solution:
 
 if __name__ == "__main__":
     s = "A man, a plan, a canal: Panama"
-    solution = Solution()
-    answer = solution.isPalindrome(s)
+    answer = Solution().isPalindrome(s)
     print(answer)
 
     s = "race a car"
-    solution = Solution()
-    answer = solution.isPalindrome(s)
+    answer = Solution().isPalindrome(s)
     print(answer)

@@ -174,42 +174,35 @@ class Solution:
 if __name__ == "__main__":
     nums = nums = [1, 4]
     target = 4
-    solution = Solution()
-    answer = solution.searchRange(nums, target)
+    answer = Solution().searchRange(nums, target)
     print(answer)
 
     nums = nums = [8, 8]
     target = 8
-    solution = Solution()
-    answer = solution.searchRange(nums, target)
+    answer = Solution().searchRange(nums, target)
     print(answer)
 
     nums = nums = [1]
     target = 1
-    solution = Solution()
-    answer = solution.searchRange(nums, target)
+    answer = Solution().searchRange(nums, target)
     print(answer)
 
     nums = nums = [1, 3]
     target = 1
-    solution = Solution()
-    answer = solution.searchRange(nums, target)
+    answer = Solution().searchRange(nums, target)
     print(answer)
 
     nums = nums = [1, 1, 2]
     target = 1
-    solution = Solution()
-    answer = solution.searchRange(nums, target)
+    answer = Solution().searchRange(nums, target)
     print(answer)
 
     nums = [5, 7, 7, 8, 8, 10]
     target = 8
-    solution = Solution()
-    answer = solution.searchRange(nums, target)
+    answer = Solution().searchRange(nums, target)
     print(answer)
 
     nums = [5, 7, 7, 8, 8, 10]
     target = 6
-    solution = Solution()
-    answer = solution.searchRange(nums, target)
+    answer = Solution().searchRange(nums, target)
     print(answer)

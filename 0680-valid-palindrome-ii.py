@@ -101,26 +101,21 @@ class Solution:
 
 if __name__ == "__main__":
     s = "acbba"
-    solution = Solution()
-    answer = solution.validPalindrome(s)
+    answer = Solution().validPalindrome(s)
     print(answer)
 
     s = "abbad"
-    solution = Solution()
-    answer = solution.validPalindrome(s)
+    answer = Solution().validPalindrome(s)
     print(answer)
 
     s = "aba"
-    solution = Solution()
-    answer = solution.validPalindrome(s)
+    answer = Solution().validPalindrome(s)
     print(answer)
 
     s = "abca"
-    solution = Solution()
-    answer = solution.validPalindrome(s)
+    answer = Solution().validPalindrome(s)
     print(answer)
 
     s = "abc"
-    solution = Solution()
-    answer = solution.validPalindrome(s)
+    answer = Solution().validPalindrome(s)
     print(answer)

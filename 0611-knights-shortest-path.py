@@ -74,8 +74,7 @@ if __name__ == "__main__":
             [0, 0, 0]]
     source = Point(2, 0)
     destination = Point(2, 2)
-    solution = Solution()
-    answer = solution.shortestPath(grid, source, destination)
+    answer = Solution().shortestPath(grid, source, destination)
     print(answer)
 
     grid = [[0, 1, 0],
@@ -83,13 +82,11 @@ if __name__ == "__main__":
             [0, 0, 0]]
     source = Point(2, 0)
     destination = Point(2, 2)
-    solution = Solution()
-    answer = solution.shortestPath(grid, source, destination)
+    answer = Solution().shortestPath(grid, source, destination)
     print(answer)
 
     grid = [[0, 1, 0], [0, 0, 0], [0, 0, 0]]
     source = Point(2, 0)
     destination = Point(2, 2)
-    solution = Solution()
-    answer = solution.shortestPath(grid, source, destination)
+    answer = Solution().shortestPath(grid, source, destination)
     print(answer)

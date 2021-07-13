@@ -29,21 +29,17 @@ class Solution:
 
 if __name__ == "__main__":
     m, n = 3, 7
-    solution = Solution()
-    answer = solution.uniquePaths(m, n)
+    answer = Solution().uniquePaths(m, n)
     print(answer)
 
     m, n = 3, 2
-    solution = Solution()
-    answer = solution.uniquePaths(m, n)
+    answer = Solution().uniquePaths(m, n)
     print(answer)
 
     m, n = 7, 3
-    solution = Solution()
-    answer = solution.uniquePaths(m, n)
+    answer = Solution().uniquePaths(m, n)
     print(answer)
 
     m, n = 3, 3
-    solution = Solution()
-    answer = solution.uniquePaths(m, n)
+    answer = Solution().uniquePaths(m, n)
     print(answer)

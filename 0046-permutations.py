@@ -50,6 +50,5 @@ class Solution:
 
 if __name__ == "__main__":
     nums = [1, 2, 3]
-    solution = Solution()
-    answer = solution.permute(nums)
+    answer = Solution().permute(nums)
     print(answer)

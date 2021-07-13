@@ -48,11 +48,9 @@ class Solution:
 
 if __name__ == "__main__":
     grid = [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]]
-    solution = Solution()
-    answer = solution.shortestPath2(grid)
+    answer = Solution().shortestPath2(grid)
     print(answer)
 
     grid = [[0, 1, 0], [0, 0, 1], [0, 0, 0]]
-    solution = Solution()
-    answer = solution.shortestPath2(grid)
+    answer = Solution().shortestPath2(grid)
     print(answer)

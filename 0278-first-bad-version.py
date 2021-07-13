@@ -51,7 +51,6 @@ class Solution:
 if __name__ == "__main__":
     version = 1
     BAD_VERSION = 1
-    solution = Solution()
-    answer = solution.firstBadVersion(version)
+    answer = Solution().firstBadVersion(version)
     print('bad_version', BAD_VERSION)
     print('answer', answer)

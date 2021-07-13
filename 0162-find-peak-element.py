@@ -95,61 +95,51 @@ class Solution:
 
 if __name__ == "__main__":
     nums = [1]
-    solution = Solution()
-    answer = solution.findPeakElement(nums)
+    answer = Solution().findPeakElement(nums)
     print(nums)
     print(f"{nums[answer]} @ {answer}", end="\n\n")
 
     nums = [1, 2]
-    solution = Solution()
-    answer = solution.findPeakElement(nums)
+    answer = Solution().findPeakElement(nums)
     print(nums)
     print(f"{nums[answer]} @ {answer}", end="\n\n")
 
     nums = [2, 1]
-    solution = Solution()
-    answer = solution.findPeakElement(nums)
+    answer = Solution().findPeakElement(nums)
     print(nums)
     print(f"{nums[answer]} @ {answer}", end="\n\n")
 
     nums = [3, 1, 2]
-    solution = Solution()
-    answer = solution.findPeakElement(nums)
+    answer = Solution().findPeakElement(nums)
     print(nums)
     print(f"{nums[answer]} @ {answer}", end="\n\n")
 
     nums = [3, 2, 1]
-    solution = Solution()
-    answer = solution.findPeakElement(nums)
+    answer = Solution().findPeakElement(nums)
     print(nums)
     print(f"{nums[answer]} @ {answer}", end="\n\n")
 
     nums = [1, 2, 3, 1]
-    solution = Solution()
-    answer = solution.findPeakElement(nums)
+    answer = Solution().findPeakElement(nums)
     print(nums)
     print(f"{nums[answer]} @ {answer}", end="\n\n")
 
     nums = nums = [1, 2, 1, 3, 5, 6, 4]
-    solution = Solution()
-    answer = solution.findPeakElement(nums)
+    answer = Solution().findPeakElement(nums)
     print(nums)
     print(f"{nums[answer]} @ {answer}", end="\n\n")
 
     nums = nums = [1, 2, 3, 4, 3]
-    solution = Solution()
-    answer = solution.findPeakElement(nums)
+    answer = Solution().findPeakElement(nums)
     print(nums)
     print(f"{nums[answer]} @ {answer}", end="\n\n")
 
     nums = nums = [1, 2, 3, 4, 5, 2, 1]
-    solution = Solution()
-    answer = solution.findPeakElement(nums)
+    answer = Solution().findPeakElement(nums)
     print(nums)
     print(f"{nums[answer]} @ {answer}", end="\n\n")
 
     nums = nums = [1, 3, 2, 1]
-    solution = Solution()
-    answer = solution.findPeakElement(nums)
+    answer = Solution().findPeakElement(nums)
     print(nums)
     print(f"{nums[answer]} @ {answer}", end="\n\n")

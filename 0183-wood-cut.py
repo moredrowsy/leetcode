@@ -64,12 +64,10 @@ class Solution:
 if __name__ == "__main__":
     L = [232, 124, 456]
     k = 7
-    solution = Solution()
-    answer = solution.woodCut(L, k)
+    answer = Solution().woodCut(L, k)
     print(answer)
 
     L = [1, 2, 3]
     k = 7
-    solution = Solution()
-    answer = solution.woodCut(L, k)
+    answer = Solution().woodCut(L, k)
     print(answer)

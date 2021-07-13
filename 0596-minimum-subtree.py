@@ -49,6 +49,5 @@ if __name__ == "__main__":
     nodes = [1, -5, 2, 1, 2, -4, -5]
     nodes = [TreeNode(node) for node in nodes]
     tree = TreeNode.get_tree_from_treenode_list(nodes)
-    solution = Solution()
-    answer = solution.findSubtree(tree)
+    answer = Solution().findSubtree(tree)
     print(answer)

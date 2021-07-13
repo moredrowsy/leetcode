@@ -54,6 +54,5 @@ class Solution:
 if __name__ == "__main__":
     nums = [3, 2, 1, 5, 6, 4]
     k = 2
-    solution = Solution()
-    answer = solution.findKthLargest(nums, k)
+    answer = Solution().findKthLargest(nums, k)
     print(answer)

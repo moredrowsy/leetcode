@@ -44,9 +44,5 @@ if __name__ == "__main__":
     nodes = [3, 9, 20, None, None, 15, 7]
     nodes = [TreeNode(node) for node in nodes]
     tree = TreeNode.get_tree_from_treenode_list(nodes)
-    solution = Solution()
-    answer = solution.levelOrder(tree)
+    answer = Solution().levelOrder(tree)
     print(answer)
-
-    treenode_list = TreeNode.get_treenode_list_from_tree(tree)
-    print(treenode_list)

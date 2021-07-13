@@ -74,14 +74,13 @@ class Solution:
 
 if __name__ == "__main__":
     nums, target = [-1, -2, -3, -4, -5], -8
-    solution = Solution()
-    answer = solution.twoSum(nums, target)
+    answer = Solution().twoSum(nums, target)
     print(answer)
 
     nums, target = [2, 7, 11, 15], 18
-    answer = solution.twoSum(nums, target)
+    answer = Solution().twoSum(nums, target)
     print(answer)
 
     nums, target = ([3, 3], 6)
-    answer = solution.twoSum(nums, target)
+    answer = Solution().twoSum(nums, target)
     print(answer)

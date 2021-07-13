@@ -50,21 +50,17 @@ class Solution:
 
 if __name__ == "__main__":
     nums = [3, 4, 5, 1, 2]
-    solution = Solution()
-    answer = solution.findMin(nums)
+    answer = Solution().findMin(nums)
     print(answer)
 
     nums = [4, 5, 6, 7, 0, 1, 2]
-    solution = Solution()
-    answer = solution.findMin(nums)
+    answer = Solution().findMin(nums)
     print(answer)
 
     nums = [11, 13, 15, 17]
-    solution = Solution()
-    answer = solution.findMin(nums)
+    answer = Solution().findMin(nums)
     print(answer)
 
     nums = [5, 1, 2, 3, 4]
-    solution = Solution()
-    answer = solution.findMin(nums)
+    answer = Solution().findMin(nums)
     print(answer)

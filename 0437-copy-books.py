@@ -57,12 +57,10 @@ class Solution:
 if __name__ == "__main__":
     pages = [3, 2, 4]
     k = 2
-    solution = Solution()
-    answer = solution.copyBooks(pages, k)
+    answer = Solution().copyBooks(pages, k)
     print(answer)
 
     pages = [3, 2, 4]
     k = 3
-    solution = Solution()
-    answer = solution.copyBooks(pages, k)
+    answer = Solution().copyBooks(pages, k)
     print(answer)

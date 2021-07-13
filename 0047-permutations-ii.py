@@ -90,17 +90,14 @@ class Solution:
 
 
 if __name__ == "__main__":
-    # nums = [2, 1, 1]
-    # solution = Solution()
-    # answer = solution.permuteUnique(nums)
-    # print(answer)
+    nums = [2, 1, 1]
+    answer = Solution().permuteUnique(nums)
+    print(answer)
 
-    # nums = [1, 2, 3]
-    # solution = Solution()
-    # answer = solution.permuteUnique(nums)
-    # print(answer)
+    nums = [1, 2, 3]
+    answer = Solution().permuteUnique(nums)
+    print(answer)
 
     nums = [3, 3, 0, 3]
-    solution = Solution()
-    answer = solution.permuteUnique(nums)
+    answer = Solution().permuteUnique(nums)
     print(answer)

@@ -64,12 +64,10 @@ class Solution:
 if __name__ == "__main__":
     nums = [-1, 0, 3, 5, 9, 12]
     target = 0
-    solution = Solution()
-    answer = solution.search(nums, target)
+    answer = Solution().search(nums, target)
     print(answer)
 
     nums = [-1, 0, 3, 5, 9, 12]
     target = 2
-    solution = Solution()
-    answer = solution.search(nums, target)
+    answer = Solution().search(nums, target)
     print(answer)

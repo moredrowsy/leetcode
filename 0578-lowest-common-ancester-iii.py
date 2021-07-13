@@ -64,6 +64,5 @@ if __name__ == "__main__":
     nodes = [TreeNode(node) for node in nodes]
     tree = TreeNode.get_tree_from_treenode_list(nodes)
     a, b = nodes[5], nodes[6]
-    solution = Solution()
-    answer = solution.lowestCommonAncestor3(tree, a, b)
+    answer = Solution().lowestCommonAncestor3(tree, a, b)
     print(answer)
