@@ -24,7 +24,7 @@ class TreeNode:
     def get_treenode_list_from_tree(cls, root):
         treenode_list = []
         queue = deque([root])
-        rightmost_node = TreeNode.rightmost_node(root)
+        rightmost_node = root.rightmost_node()
 
         while queue:
             n = len(queue)
@@ -39,15 +39,6 @@ class TreeNode:
                 if node:
                     queue.append(node.left)
                     queue.append(node.right)
-
-    @classmethod
-    def rightmost_node(cls, root):
-        if root is None:
-            return None
-
-        right_node = TreeNode.rightmost_node(root.right)
-
-        return right_node if right_node else root
 
     def __init__(self, val):
         self.val = val
@@ -79,3 +70,28 @@ class TreeNode:
                     queue.append(node.left)
                 if node.right:
                     queue.append(node.right)
+
+    def rightmost_node(self):
+        return self._rightmost_node(self)
+
+    def _rightmost_node(self, root):
+        if root is None:
+            return None
+
+        right_node = self._rightmost_node(root.right)
+
+        return right_node if right_node else root
+
+    def get_queue(self):
+        queue = []
+        self._get_queue(self, queue)
+        return queue
+
+    def _get_queue(self, root, queue):
+        queue.append(root)
+
+        if root is None:
+            return
+
+        self._get_queue(root.left, queue)
+        self._get_queue(root.right, queue)
