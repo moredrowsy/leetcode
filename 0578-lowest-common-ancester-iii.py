@@ -13,32 +13,7 @@ class TreeNode:
         this.val = val
         this.left, this.right = None, None
 """
-
-
-def build_tree_from_tree_nodes(nodes):
-    from collections import deque
-    queue = deque(nodes)
-    root = queue.popleft()
-    roots = deque([root])
-
-    while queue:
-        node = roots.popleft()
-        node.left = queue.popleft()
-        node.right = queue.popleft()
-
-        roots.append(node.left)
-        roots.append(node.right)
-
-    return root
-
-
-class TreeNode:
-    def __init__(self, val):
-        self.val = val
-        self.left, self.right = None, None
-
-    def __repr__(self) -> str:
-        return f"{self.val}"
+from tree_node import TreeNode
 
 
 class Solution:
@@ -87,8 +62,8 @@ class Solution:
 if __name__ == "__main__":
     nodes = [4, 3, 7, None, None, 5, 6]
     nodes = [TreeNode(node) for node in nodes]
-    root = build_tree_from_tree_nodes(nodes)
+    tree = TreeNode.build_tree_from_tree_nodes(nodes)
     a, b = nodes[5], nodes[6]
     solution = Solution()
-    answer = solution.lowestCommonAncestor3(root, a, b)
+    answer = solution.lowestCommonAncestor3(tree, a, b)
     print(answer)

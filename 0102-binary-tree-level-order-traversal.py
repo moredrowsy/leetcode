@@ -10,36 +10,8 @@ Constraints:
 The number of nodes in the tree is in the range [0, 2000].
 -1000 <= Node.val <= 1000
 """
+from tree_node import TreeNode
 from typing import List
-
-
-def build_tree_from_tree_nodes(nodes):
-    from collections import deque
-    queue = deque(nodes)
-    root = queue.popleft()
-    roots = deque([root])
-
-    while queue:
-        node = roots.popleft()
-        node.left = queue.popleft()
-        node.right = queue.popleft()
-
-        roots.append(node.left)
-        roots.append(node.right)
-
-    return root
-
-
-class TreeNode:
-    """Definition for a binary tree node."""
-
-    def __init__(self, val=0, left=None, right=None):
-        self.val = val
-        self.left = left
-        self.right = right
-
-    def __repr__(self) -> str:
-        return f"{self.val}"
 
 
 class Solution:
@@ -71,7 +43,7 @@ class Solution:
 if __name__ == "__main__":
     nodes = [3, 9, 20, None, None, 15, 7]
     nodes = [TreeNode(node) for node in nodes]
-    root = build_tree_from_tree_nodes(nodes)
+    tree = TreeNode.build_tree_from_tree_nodes(nodes)
     solution = Solution()
-    answer = solution.levelOrder(root)
+    answer = solution.levelOrder(tree)
     print(answer)

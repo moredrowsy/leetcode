@@ -13,33 +13,7 @@ class TreeNode:
         self.left, self.right = None, None
 """
 
-
-def build_tree_from_tree_nodes(nodes):
-    from collections import deque
-    queue = deque(nodes)
-    root = queue.popleft()
-    roots = deque([root])
-
-    while queue:
-        node = roots.popleft()
-        node.left = queue.popleft()
-        node.right = queue.popleft()
-
-        roots.append(node.left)
-        roots.append(node.right)
-
-    return root
-
-
-class TreeNode:
-    """Definition of TreeNode"""
-
-    def __init__(self, val):
-        self.val = val
-        self.left, self.right = None, None
-
-    def __repr__(self) -> str:
-        return f"{self.val}"
+from tree_node import TreeNode
 
 
 class Solution:
@@ -74,7 +48,7 @@ class Solution:
 if __name__ == "__main__":
     nodes = [1, -5, 2, 1, 2, -4, -5]
     nodes = [TreeNode(node) for node in nodes]
-    root = build_tree_from_tree_nodes(nodes)
+    tree = TreeNode.build_tree_from_tree_nodes(nodes)
     solution = Solution()
-    answer = solution.findSubtree(root)
+    answer = solution.findSubtree(tree)
     print(answer)
