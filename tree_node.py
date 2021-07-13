@@ -5,8 +5,8 @@ from collections import deque
 class TreeNode:
 
     @classmethod
-    def build_tree_from_tree_nodes(cls, nodes):
-        queue = deque(nodes)
+    def get_tree_from_treenode_list(cls, treenodes):
+        queue = deque(treenodes)
         root = queue.popleft()
         roots = deque([root])
 
@@ -19,6 +19,35 @@ class TreeNode:
             roots.append(node.right)
 
         return root
+
+    @classmethod
+    def get_treenode_list_from_tree(cls, root):
+        treenode_list = []
+        queue = deque([root])
+        rightmost_node = TreeNode.rightmost_node(root)
+
+        while queue:
+            n = len(queue)
+            for _ in range(n):
+                node = queue.popleft()
+
+                treenode_list.append(node)
+
+                if node is rightmost_node:
+                    return treenode_list
+
+                if node:
+                    queue.append(node.left)
+                    queue.append(node.right)
+
+    @classmethod
+    def rightmost_node(cls, root):
+        if root is None:
+            return None
+
+        right_node = TreeNode.rightmost_node(root.right)
+
+        return right_node if right_node else root
 
     def __init__(self, val):
         self.val = val
