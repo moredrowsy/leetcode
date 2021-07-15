@@ -10,10 +10,10 @@ class TreeNode:
         root = queue.popleft()
         roots = deque([root])
 
-        while queue:
+        while queue and roots:
             node = roots.popleft()
             node.left = queue.popleft()
-            node.right = queue.popleft()
+            node.right = queue.popleft() if queue else None
 
             roots.append(node.left)
             roots.append(node.right)
@@ -50,9 +50,12 @@ class TreeNode:
     def __str__(self) -> str:
         return f"{self.val}"
 
-    def insert(self, val):
-        """Insert nodes level from left to right"""
+    def insert(self, item):
+        """Insert nodes by level from left to right"""
         queue = deque([self])
+
+        if item and not isinstance(item, TreeNode):
+            item = TreeNode(item)
 
         while queue:
             n = len(queue)
@@ -61,10 +64,10 @@ class TreeNode:
                 node = queue.popleft()
 
                 if not node.left:
-                    node.left = TreeNode(val)
+                    node.left = item
                     return
                 if not node.right:
-                    node.right = TreeNode(val)
+                    node.right = item
                     return
                 if node.left:
                     queue.append(node.left)
