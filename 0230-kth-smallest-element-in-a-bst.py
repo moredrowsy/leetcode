@@ -17,7 +17,7 @@ from tree_node import TreeNode
 
 class Solution:
     def kthSmallest(self, root: TreeNode, k: int) -> int:
-        stack = []
+        stack = []  # A list to keep all the smallest values
 
         # We only care about the smallest
         # Left side is the smaller than right so stack up the left side only
@@ -25,15 +25,18 @@ class Solution:
             stack.append(root)
             root = root.left
 
-        for _ in range(k - 1):
-            node = stack[-1]
+        for i in range(k - 1):
+            node = stack[-1]  # Peak at the last element
 
             if not node.right:
                 node = stack.pop(-1)
+                # Keep popping stack on right branch and old nodes before
                 while stack and stack[-1].right == node:
                     node = stack.pop(-1)
             else:
                 node = node.right
+                # Add the right node and it's left branch
+                # Because the next left branch are the next smallest values
                 while node:
                     stack.append(node)
                     node = node.left
