@@ -20,45 +20,46 @@ class RandomizedSet:
         """
         Initialize your data structure here.
         """
-        self.items = []
-        self.indices = {}
+        self.values = []
+        self.value_indices = {}  # Map {key: index} for self.values
 
     def __repr__(self) -> str:
-        return f"{self.items}"
+        return f"{self.values}"
 
     def insert(self, val: int) -> bool:
         """
         Inserts a value to the set. Returns true if the set did not already contain the specified element.
         """
-        if val in self.indices:
+        if val in self.value_indices:
             return False
-        else:
-            self.items.append(val)
-            self.indices[val] = len(self.items) - 1
-            return True
+
+        self.values.append(val)
+        self.value_indices[val] = len(self.values) - 1
+        return True
 
     def remove(self, val: int) -> bool:
         """
         Removes a value from the set. Returns true if the set contained the specified element.
         """
-        if val in self.indices:
-            index = self.indices[val]
-            self.indices[self.items[-1]] = index  # Update last item to index
-            self.items[index], self.items[-1] = self.items[-1], self.items[index]
-            self.items.pop()
-            del self.indices[val]
-            return True
-        else:
+        if not val in self.value_indices:
             return False
+
+        index = self.value_indices[val]
+        # Update last item to index
+        self.value_indices[self.values[-1]] = index
+        self.values[index], self.values[-1] = self.values[-1], self.values[index]
+        self.values.pop()
+        del self.value_indices[val]
+
+        return True
 
     def getRandom(self) -> int:
         """
         Get a random element from the set.
         """
-        if self.items:
-            return self.items[randint(0, len(self.items)-1)]
-        else:
-            return None
+        if self.values:
+            return self.values[randint(0, len(self.values)-1)]
+        return None
 
 
 def process_problem(cmds, args):
