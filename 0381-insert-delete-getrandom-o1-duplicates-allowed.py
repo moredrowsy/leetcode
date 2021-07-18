@@ -35,7 +35,7 @@ class RandomizedCollection:
         Inserts a value to the collection. Returns true if the collection did not already contain the specified element.
         """
         self.values.append(val)
-        index = len(self.values)-1
+        index = len(self.values) - 1
 
         if val in self.value_indices_sets:
             self.value_indices_sets[val].add(index)
@@ -48,7 +48,7 @@ class RandomizedCollection:
         """
         Removes a value from the collection. Returns true if the collection contained the specified element.
         """
-        if not val in self.value_indices_sets:
+        if val not in self.value_indices_sets:
             return False
 
         # Target value

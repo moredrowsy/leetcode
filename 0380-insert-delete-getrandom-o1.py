@@ -41,7 +41,7 @@ class RandomizedSet:
         """
         Removes a value from the set. Returns true if the set contained the specified element.
         """
-        if not val in self.value_indices:
+        if val not in self.value_indices:
             return False
 
         index = self.value_indices[val]
