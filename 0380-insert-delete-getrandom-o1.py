@@ -21,7 +21,7 @@ class RandomizedSet:
         Initialize your data structure here.
         """
         self.values = []
-        self.value_indices = {}  # Map {key: index} for self.values
+        self.value_to_index = {}  # Map {key: index} for self.values
 
     def __repr__(self) -> str:
         return f"{self.values}"
@@ -30,26 +30,26 @@ class RandomizedSet:
         """
         Inserts a value to the set. Returns true if the set did not already contain the specified element.
         """
-        if val in self.value_indices:
+        if val in self.value_to_index:
             return False
 
         self.values.append(val)
-        self.value_indices[val] = len(self.values) - 1
+        self.value_to_index[val] = len(self.values) - 1
         return True
 
     def remove(self, val: int) -> bool:
         """
         Removes a value from the set. Returns true if the set contained the specified element.
         """
-        if val not in self.value_indices:
+        if val not in self.value_to_index:
             return False
 
-        index = self.value_indices[val]
+        index = self.value_to_index[val]
         # Update last item to index
-        self.value_indices[self.values[-1]] = index
+        self.value_to_index[self.values[-1]] = index
         self.values[index], self.values[-1] = self.values[-1], self.values[index]
         self.values.pop()
-        del self.value_indices[val]
+        del self.value_to_index[val]
 
         return True
 
@@ -83,14 +83,23 @@ def process_problem(cmds, args):
 
 
 if __name__ == "__main__":
+    from random import seed
+    seed(0)
+
     cmds = ["RandomizedSet", "insert", "remove", "insert",
             "getRandom", "remove", "insert", "getRandom"]
     args = [[], [1], [2], [2], [], [1], [2], []]
     output = process_problem(cmds, args)
-    print(output)
+    expected = [None, True, False, True, 2, True, False, 2]
+    print(f"\noutput\t\t{output}")
+    print(f"expected\t{expected}")
+    print(output == expected)
 
     cmds = ["RandomizedSet", "insert", "insert",
             "remove", "insert", "remove", "getRandom"]
     args = [[], [0], [1], [0], [2], [1], []]
     output = process_problem(cmds, args)
-    print(output)
+    expected = [None, True, True, True, True, True, 2]
+    print(f"\noutput\t\t{output}")
+    print(f"expected\t{expected}")
+    print(output == expected)

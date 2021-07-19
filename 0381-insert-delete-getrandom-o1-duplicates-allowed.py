@@ -28,7 +28,7 @@ class RandomizedCollection:
         Initialize your data structure here.
         """
         self.values = []
-        self.value_indices_sets = {}  # Map of set indices
+        self.value_to_indices_map = {}  # Map of set indices
 
     def insert(self, val: int) -> bool:
         """
@@ -37,41 +37,41 @@ class RandomizedCollection:
         self.values.append(val)
         index = len(self.values) - 1
 
-        if val in self.value_indices_sets:
-            self.value_indices_sets[val].add(index)
+        if val in self.value_to_indices_map:
+            self.value_to_indices_map[val].add(index)
             return False
         else:
-            self.value_indices_sets[val] = {index}
+            self.value_to_indices_map[val] = {index}
             return True
 
     def remove(self, val: int) -> bool:
         """
         Removes a value from the collection. Returns true if the collection contained the specified element.
         """
-        if val not in self.value_indices_sets:
+        if val not in self.value_to_indices_map:
             return False
 
-        # Target value
-        value_indices_set = self.value_indices_sets[val]
+        # Value to remove
+        value_indices_set = self.value_to_indices_map[val]
         value_index = next(iter(value_indices_set))
 
-        # Replace value is the last value
+        # Value to replace
         replace_index = len(self.values) - 1
         replace_value = self.values[replace_index]
-        replace_indices_set = self.value_indices_sets[replace_value]
+        replace_indices_set = self.value_to_indices_map[replace_value]
 
         # Replace
         self.values[value_index] = replace_value
         self.values.pop()
-        value_indices_set.remove(value_index)
 
-        # Update replace_indices_set with new value_index
+        # Update indices
+        value_indices_set.remove(value_index)
+        if not self.value_to_indices_map[val]:
+            del self.value_to_indices_map[val]
+
         if replace_index in replace_indices_set:
             replace_indices_set.remove(replace_index)
             replace_indices_set.add(value_index)
-
-        if not self.value_indices_sets[val]:
-            del self.value_indices_sets[val]
 
         return True
 
@@ -106,22 +106,34 @@ def process_problem(cmds, args):
 
 
 if __name__ == "__main__":
+    from random import seed
+    seed(0)
+
     cmds = ["RandomizedCollection", "insert", "insert",
             "insert", "getRandom", "remove", "getRandom"]
     args = [[], [1], [1], [2], [], [1], []]
     output = process_problem(cmds, args)
-    print(output)
+    expected = [None, True, False, True, 1, True, 1]
+    print(f"\noutput\t\t{output}")
+    print(f"expected\t{expected}")
+    print(output == expected)
 
     cmds = ["RandomizedCollection", "insert", "remove", "insert"]
     args = [[], [1], [1], [1]]
     output = process_problem(cmds, args)
-    print(output)
+    expected = [None, True, True, True]
+    print(f"\noutput\t\t{output}")
+    print(f"expected\t{expected}")
+    print(output == expected)
 
     cmds = ["RandomizedCollection", "insert", "insert", "insert",
             "insert", "insert", "remove", "remove", "remove", "remove"]
     args = [[], [4], [3], [4], [2], [4], [4], [3], [4], [4]]
     output = process_problem(cmds, args)
-    print(output)
+    expected = [None, True, True, False, True, False, True, True, True, True]
+    print(f"\noutput\t\t{output}")
+    print(f"expected\t{expected}")
+    print(output == expected)
 
     cmds = ["RandomizedCollection", "insert", "insert", "insert", "insert",
             "insert", "remove", "remove", "remove", "insert", "remove",
@@ -130,4 +142,8 @@ if __name__ == "__main__":
     args = [[], [1], [1], [2], [2], [2], [1], [1], [2], [1],
             [2], [], [], [], [], [], [], [], [], [], []]
     output = process_problem(cmds, args)
-    print(output)
+    expected = [None, True, False, True, False, False, True,
+                True, True, True, True, 2, 1, 1, 1, 1, 1, 1, 2, 2, 1]
+    print(f"\noutput\t\t{output}")
+    print(f"expected\t{expected}")
+    print(output == expected)
