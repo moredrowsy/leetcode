@@ -125,6 +125,28 @@ class LRUCache:
             self.nodes.remove_node(self.nodes.head)
 
 
+class LRUCache2:
+    def __init__(self, capacity: int):
+        from collections import OrderedDict
+        self.cache = OrderedDict()
+        self.capacity = capacity
+
+    def get(self, key: int) -> int:
+        if key not in self.cache:
+            return -1
+
+        self.cache.move_to_end(key)
+        return self.cache[key]
+
+    def put(self, key: int, value: int) -> None:
+        self.cache[key] = value
+        self.cache.move_to_end(key)
+
+        if len(self.cache) > self.capacity:
+            front = next(iter(self.cache))
+            del self.cache[front]
+
+
 def process_problem(cmds, args):
     output = []
     cache = None
@@ -132,7 +154,7 @@ def process_problem(cmds, args):
         result = None
 
         if cmd == "LRUCache":
-            cache = LRUCache(arg[0])
+            cache = LRUCache2(arg[0])
         elif cmd == "get":
             result = cache.get(arg[0])
         elif cmd == "put":
