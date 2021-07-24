@@ -4,7 +4,7 @@ Hard
 https://www.lintcode.com/problem/1879/
 
 Given an array of integers that is already sorted in ascending absolute order,
-find two numbers so that the sum of them equals a specific number.
+find two numbers that the sum of them equals a specific number.
 
 The function twoSum should return indices of the two numbers such that they add
 up to the target, where index1 must be less than index2. Note: the subscript of
@@ -29,19 +29,19 @@ class Solution:
     def next_left(self, left, nums):
         n = len(nums)
 
-        # In negative range, so find next smallest negative or positive
+        # In negative range, find next smallest negative or positive
         if nums[left] < 0:
             # Find next smallest negative
             for i in range(left-1, -1, -1):
                 if nums[i] < 0:
                     return i
-            # Couldn't find negative, so look for positive/0
+            # Couldn't find negative, find positive/0
             for i in range(n):
                 if nums[i] >= 0:
                     return i
             # Couldn't find anything
             return -1
-        # In positive/0 range, so next largest is positive
+        # In positive/0 range, next smallest is positive
         else:
             for i in range(left+1, n):
                 if nums[i] >= 0:
@@ -58,13 +58,13 @@ class Solution:
             for i in range(right-1, -1, -1):
                 if nums[i] > 0:
                     return i
-            # Couldn't find any positive, so look for negative/0
+            # Couldn't find any positive, find negative/0
             for i in range(n):
                 if nums[i] <= 0:
                     return i
             # Couldn't find anything
             return -1
-        # In negative/0 range,
+        # In negative/0 range, find next largest negative/0
         else:
             for i in range(right+1, n):
                 if nums[i] <= 0:
@@ -74,13 +74,12 @@ class Solution:
 
     def twoSumVII(self, nums, target):
         results = []
-        n = len(nums)
 
-        if n:
+        if nums:
             left, right = 0, 0
 
             # Find global min left and max right
-            for i in range(n):
+            for i in range(len(nums)):
                 if nums[i] < nums[left]:
                     left = i
                 if nums[i] > nums[right]:
