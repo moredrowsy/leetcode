@@ -12,6 +12,9 @@ the array starts with 0
 
 You are not allowed to sort this array.
 
+Challenge
+O(n) time complexity and O(1) extra space
+
 Constraints:
  - It is guaranteed that all numbers in the numsnums is distinct.
  - The length of nums is <= 100 000
@@ -27,6 +30,15 @@ class Solution:
     """
 
     def next_left(self, left, nums):
+        """
+        Time Complexity
+        ---------------
+        O(n)
+
+        Space Complexity
+        ----------------
+        O(1)
+        """
         n = len(nums)
 
         # In negative range, find next smallest negative or positive
