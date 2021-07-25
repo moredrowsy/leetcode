@@ -51,15 +51,14 @@ class Solution:
             for i in range(n):
                 if nums[i] >= 0:
                     return i
-            # Couldn't find anything
-            return -1
         # In positive/0 range, next smallest is positive
         else:
             for i in range(left+1, n):
                 if nums[i] >= 0:
                     return i
-            # Couldn't find anything
-            return -1
+
+        # Couldn't find anything
+        return -1
 
     def next_right(self, right, nums):
         n = len(nums)
@@ -74,24 +73,24 @@ class Solution:
             for i in range(n):
                 if nums[i] <= 0:
                     return i
-            # Couldn't find anything
-            return -1
         # In negative/0 range, find next largest negative/0
         else:
             for i in range(right+1, n):
                 if nums[i] <= 0:
                     return i
-            # Couldn't find anything
-            return -1
+
+        # Couldn't find anything
+        return -1
 
     def twoSumVII(self, nums, target):
         results = []
 
-        if nums:
+        n = len(nums)
+        if nums and n > 1:
             left, right = 0, 0
 
             # Find global min left and max right
-            for i in range(len(nums)):
+            for i in range(n):
                 if nums[i] < nums[left]:
                     left = i
                 if nums[i] > nums[right]:
