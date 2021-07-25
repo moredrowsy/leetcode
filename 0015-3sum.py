@@ -28,9 +28,9 @@ class Solution:
         """
         results = []
 
-        if nums and len(nums) > 2:
+        n = len(nums)
+        if nums and n > 2:
             nums = sorted(nums)
-            n = len(nums)
 
             for i in range(n-2):
                 # Skip duplicate numbers
