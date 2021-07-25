@@ -9,7 +9,7 @@ Do not allocate extra space for another array, you must do this by modifying the
 
 Clarification:
 
-Confused why the returned value is an integer but your output is an array?
+Confused why the returned value is an integer but your answer is an array?
 
 Note that the input array is passed in by reference, which means a modification to the input array will be known to the caller as well.
 
