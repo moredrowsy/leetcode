@@ -55,9 +55,28 @@ class Solution:
             else:
                 results.append([-target, nums[left], nums[right]])
                 left += 1
+                right -= 1
+
+                # Skip duplicates
+                while left < right and nums[left] == nums[left-1]:
+                    left += 1
+                while left < right and nums[right] == nums[right+1]:
+                    right -= 1
 
 
 if __name__ == "__main__":
     nums = [-1, 0, 1, 2, -1, -4]
+    answer = Solution().threeSum(nums)
+    print(answer)
+
+    nums = [0, 0, 0, 0]
+    answer = Solution().threeSum(nums)
+    print(answer)
+
+    nums = [-2, 0, 0, 2, 2]
+    answer = Solution().threeSum(nums)
+    print(answer)
+
+    nums = [-2, 0, 1, 1, 2]
     answer = Solution().threeSum(nums)
     print(answer)

@@ -114,6 +114,7 @@ class Solution:
                     results.append(tmp)
 
                     left = self.next_left(left, nums)
+                    right = self.next_right(right, nums)
 
                 if left == -1 or right == -1:
                     break
