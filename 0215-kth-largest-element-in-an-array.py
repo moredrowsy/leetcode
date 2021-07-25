@@ -54,5 +54,8 @@ class Solution:
 if __name__ == "__main__":
     nums = [3, 2, 1, 5, 6, 4]
     k = 2
-    answer = Solution().findKthLargest(nums, k)
-    print(answer)
+    output = Solution().findKthLargest(nums, k)
+    expected = 5
+    print(f"\noutput\t\t{output}")
+    print(f"expected\t{expected}")
+    print(output == expected)

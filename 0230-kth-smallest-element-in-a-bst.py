@@ -25,13 +25,13 @@ class Solution:
             stack.append(root)
             root = root.left
 
-        for i in range(k - 1):
+        for _ in range(k - 1):
             node = stack[-1]  # Peak at the last element
 
             if not node.right:
                 node = stack.pop(-1)
                 # Keep popping stack on right branch and old nodes before
-                while stack and stack[-1].right == node:
+                while stack and stack[-1].right and stack[-1].right == node:
                     node = stack.pop(-1)
             else:
                 node = node.right

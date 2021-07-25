@@ -48,9 +48,15 @@ class Solution:
 
 if __name__ == "__main__":
     grid = [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]]
-    answer = Solution().shortestPath2(grid)
-    print(answer)
+    output = Solution().shortestPath2(grid)
+    expected = 3
+    print(f"\noutput\t\t{output}")
+    print(f"expected\t{expected}")
+    print(output == expected)
 
     grid = [[0, 1, 0], [0, 0, 1], [0, 0, 0]]
-    answer = Solution().shortestPath2(grid)
-    print(answer)
+    output = Solution().shortestPath2(grid)
+    expected = -1
+    print(f"\noutput\t\t{output}")
+    print(f"expected\t{expected}")
+    print(output == expected)

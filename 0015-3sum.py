@@ -66,17 +66,29 @@ class Solution:
 
 if __name__ == "__main__":
     nums = [-1, 0, 1, 2, -1, -4]
-    answer = Solution().threeSum(nums)
-    print(answer)
+    output = Solution().threeSum(nums)
+    expected = [[-1, -1, 2], [-1, 0, 1]]
+    print(f"\noutput\t\t{output}")
+    print(f"expected\t{expected}")
+    print(output == expected)
 
     nums = [0, 0, 0, 0]
-    answer = Solution().threeSum(nums)
-    print(answer)
+    output = Solution().threeSum(nums)
+    expected = [[0, 0, 0]]
+    print(f"\noutput\t\t{output}")
+    print(f"expected\t{expected}")
+    print(output == expected)
 
     nums = [-2, 0, 0, 2, 2]
-    answer = Solution().threeSum(nums)
-    print(answer)
+    output = Solution().threeSum(nums)
+    expected = [[-2, 0, 2]]
+    print(f"\noutput\t\t{output}")
+    print(f"expected\t{expected}")
+    print(output == expected)
 
     nums = [-2, 0, 1, 1, 2]
-    answer = Solution().threeSum(nums)
-    print(answer)
+    output = Solution().threeSum(nums)
+    expected = [[-2, 0, 2], [-2, 1, 1]]
+    print(f"\noutput\t\t{output}")
+    print(f"expected\t{expected}")
+    print(output == expected)

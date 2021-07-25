@@ -16,6 +16,15 @@ from typing import List
 
 class Solution:
     def levelOrder(self, root: TreeNode) -> List[List[int]]:
+        """
+        Time Complexity
+        ---------------
+        O(n)
+
+        Space Complexity
+        ----------------
+        O(n)
+        """
         output = []
 
         if root:
@@ -44,5 +53,8 @@ if __name__ == "__main__":
     nodes = [3, 9, 20, None, None, 15, 7]
     nodes = [TreeNode(node) if node else None for node in nodes]
     tree = TreeNode.get_tree_from_treenode_list(nodes)
-    answer = Solution().levelOrder(tree)
-    print(answer)
+    output = Solution().levelOrder(tree)
+    expected = [[3], [9, 20], [15, 7]]
+    print(f"\noutput\t\t{output}")
+    print(f"expected\t{expected}")
+    print(output == expected)

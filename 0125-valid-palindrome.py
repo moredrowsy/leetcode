@@ -80,9 +80,15 @@ class Solution:
 
 if __name__ == "__main__":
     s = "A man, a plan, a canal: Panama"
-    answer = Solution().isPalindrome(s)
-    print(answer)
+    output = Solution().isPalindrome(s)
+    expected = True
+    print(f"\noutput\t\t{output}")
+    print(f"expected\t{expected}")
+    print(output == expected)
 
     s = "race a car"
-    answer = Solution().isPalindrome(s)
-    print(answer)
+    output = Solution().isPalindrome(s)
+    expected = False
+    print(f"\noutput\t\t{output}")
+    print(f"expected\t{expected}")
+    print(output == expected)

@@ -3,10 +3,10 @@
 Medium
 https://leetcode.com/problems/largest-divisible-subset/
 
-Given a set of distinct positive integers nums, return the largest subset answer such that every pair (answer[i], answer[j]) of elements in this subset satisfies:
+Given a set of distinct positive integers nums, return the largest subset output such that every pair (output[i], output[j]) of elements in this subset satisfies:
 
-answer[i] % answer[j] == 0, or
-answer[j] % answer[i] == 0
+output[i] % output[j] == 0, or
+output[j] % output[i] == 0
 If there are multiple solutions, return any of them.
 
 Constraints:
@@ -64,17 +64,29 @@ class Solution:
 
 if __name__ == "__main__":
     nums = [1, 2, 3]
-    answer = Solution().largestDivisibleSubset(nums)
-    print(answer)
+    output = Solution().largestDivisibleSubset(nums)
+    expected = [1, 2]
+    print(f"\noutput\t\t{output}")
+    print(f"expected\t{expected}")
+    print(output == expected)
 
     nums = [1, 2, 4, 8]
-    answer = Solution().largestDivisibleSubset(nums)
-    print(answer)
+    output = Solution().largestDivisibleSubset(nums)
+    expected = [1, 2, 4, 8]
+    print(f"\noutput\t\t{output}")
+    print(f"expected\t{expected}")
+    print(output == expected)
 
     nums = [4, 8, 10, 240]
-    answer = Solution().largestDivisibleSubset(nums)
-    print(answer)
+    output = Solution().largestDivisibleSubset(nums)
+    expected = [4, 8, 240]
+    print(f"\noutput\t\t{output}")
+    print(f"expected\t{expected}")
+    print(output == expected)
 
     nums = [2, 3, 4, 8]
-    answer = Solution().largestDivisibleSubset(nums)
-    print(answer)
+    output = Solution().largestDivisibleSubset(nums)
+    expected = [2, 4, 8]
+    print(f"\noutput\t\t{output}")
+    print(f"expected\t{expected}")
+    print(output == expected)

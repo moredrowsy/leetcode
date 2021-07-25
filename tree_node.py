@@ -50,6 +50,9 @@ class TreeNode:
     def __str__(self) -> str:
         return f"{self.val}"
 
+    def __eq__(self, o: object) -> bool:
+        return self.val == o.val
+
     def insert(self, item):
         """Insert nodes by level from left to right"""
         queue = deque([self])

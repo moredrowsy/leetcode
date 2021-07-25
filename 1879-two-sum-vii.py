@@ -124,19 +124,31 @@ class Solution:
 
 if __name__ == "__main__":
     nums, target = [0, -1, 2, -3, 4], 1
-    answer = Solution().twoSumVII(nums, target)
-    print(answer)
+    output = Solution().twoSumVII(nums, target)
+    expected = [[3, 4], [1, 2]]
+    print(f"\noutput\t\t{output}")
+    print(f"expected\t{expected}")
+    print(output == expected)
 
     nums, target = [1, 2, 3, 4], 5
-    answer = Solution().twoSumVII(nums, target)
-    print(answer)
+    output = Solution().twoSumVII(nums, target)
+    expected = [[0, 3], [1, 2]]
+    print(f"\noutput\t\t{output}")
+    print(f"expected\t{expected}")
+    print(output == expected)
 
     nums, target = [1, 4, 24, -30, -35, 35, -39, -46, -53, 65, -69, -70, -95,
                     96, 109, 124, 131, 143, 150, -163, -188, 189, -190, 245,
                     246, 266, -266, 272, 286, -296], 538
-    answer = Solution().twoSumVII(nums, target)
-    print(answer)
+    output = Solution().twoSumVII(nums, target)
+    expected = [[25, 27]]
+    print(f"\noutput\t\t{output}")
+    print(f"expected\t{expected}")
+    print(output == expected)
 
     nums, target = [11, -14, -23, -24, 27, -36, 48, 66, -70, -72], -60
-    answer = Solution().twoSumVII(nums, target)
-    print(answer)
+    output = Solution().twoSumVII(nums, target)
+    expected = [[3, 5]]
+    print(f"\noutput\t\t{output}")
+    print(f"expected\t{expected}")
+    print(output == expected)

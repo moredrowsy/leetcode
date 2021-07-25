@@ -12,12 +12,21 @@ How many possible unique paths are there?
 Constraints:
 
 1 <= m, n <= 100
-It's guaranteed that the answer will be less than or equal to 2 * 109.
+It's guaranteed that the output will be less than or equal to 2 * 109.
 """
 
 
 class Solution:
     def uniquePaths(self, m: int, n: int) -> int:
+        """
+        Time Complexity
+        ---------------
+        O(n^2)
+
+        Space Complexity
+        ----------------
+        O(n)
+        """
         dp = [[1] * n for _ in range(m)]
 
         for i in range(1, m):
@@ -29,17 +38,29 @@ class Solution:
 
 if __name__ == "__main__":
     m, n = 3, 7
-    answer = Solution().uniquePaths(m, n)
-    print(answer)
+    output = Solution().uniquePaths(m, n)
+    expected = 28
+    print(f"\noutput\t\t{output}")
+    print(f"expected\t{expected}")
+    print(output == expected)
 
     m, n = 3, 2
-    answer = Solution().uniquePaths(m, n)
-    print(answer)
+    output = Solution().uniquePaths(m, n)
+    expected = 3
+    print(f"\noutput\t\t{output}")
+    print(f"expected\t{expected}")
+    print(output == expected)
 
     m, n = 7, 3
-    answer = Solution().uniquePaths(m, n)
-    print(answer)
+    output = Solution().uniquePaths(m, n)
+    expected = 28
+    print(f"\noutput\t\t{output}")
+    print(f"expected\t{expected}")
+    print(output == expected)
 
     m, n = 3, 3
-    answer = Solution().uniquePaths(m, n)
-    print(answer)
+    output = Solution().uniquePaths(m, n)
+    expected = 6
+    print(f"\noutput\t\t{output}")
+    print(f"expected\t{expected}")
+    print(output == expected)

@@ -64,5 +64,9 @@ if __name__ == "__main__":
     nodes = [TreeNode(node) if node else None for node in nodes]
     tree = TreeNode.get_tree_from_treenode_list(nodes)
     a, b = nodes[5], nodes[6]
-    answer = Solution().lowestCommonAncestor3(tree, a, b)
-    print(answer)
+    output = Solution().lowestCommonAncestor3(tree, a, b)
+    expected = 7
+    expected = TreeNode(expected)
+    print(f"\noutput\t\t{output}")
+    print(f"expected\t{expected}")
+    print(output == expected)

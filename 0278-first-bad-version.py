@@ -51,6 +51,8 @@ class Solution:
 if __name__ == "__main__":
     version = 1
     BAD_VERSION = 1
-    answer = Solution().firstBadVersion(version)
-    print('bad_version', BAD_VERSION)
-    print('answer', answer)
+    output = Solution().firstBadVersion(version)
+    expected = 1
+    print(f"\noutput\t\t{output}")
+    print(f"expected\t{expected}")
+    print(output == expected)

@@ -49,5 +49,9 @@ if __name__ == "__main__":
     nodes = [1, -5, 2, 1, 2, -4, -5]
     nodes = [TreeNode(node) if node else None for node in nodes]
     tree = TreeNode.get_tree_from_treenode_list(nodes)
-    answer = Solution().findSubtree(tree)
-    print(answer)
+    output = Solution().findSubtree(tree)
+    expected = 1
+    expected = TreeNode(expected)
+    print(f"\noutput\t\t{output}")
+    print(f"expected\t{expected}")
+    print(output == expected)

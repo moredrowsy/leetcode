@@ -125,5 +125,8 @@ class Solution:
 
 if __name__ == "__main__":
     nums = [5, 1, 1, 2, 0, 0]
-    answer = Solution().sortArray(nums)
-    print(answer)
+    output = Solution().sortArray(nums)
+    expected = [0, 0, 1, 1, 2, 5]
+    print(f"\noutput\t\t{output}")
+    print(f"expected\t{expected}")
+    print(output == expected)

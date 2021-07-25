@@ -33,13 +33,22 @@ class Solution:
 
 if __name__ == "__main__":
     nums = [10, 9, 2, 5, 3, 7, 101, 18]
-    answer = Solution().lengthOfLIS(nums)
-    print(answer)
+    output = Solution().lengthOfLIS(nums)
+    expected = 4
+    print(f"\noutput\t\t{output}")
+    print(f"expected\t{expected}")
+    print(output == expected)
 
     nums = [0, 1, 0, 3, 2, 3]
-    answer = Solution().lengthOfLIS(nums)
-    print(answer)
+    output = Solution().lengthOfLIS(nums)
+    expected = 4
+    print(f"\noutput\t\t{output}")
+    print(f"expected\t{expected}")
+    print(output == expected)
 
     nums = [7, 7, 7, 7, 7, 7, 7]
-    answer = Solution().lengthOfLIS(nums)
-    print(answer)
+    output = Solution().lengthOfLIS(nums)
+    expected = 1
+    print(f"\noutput\t\t{output}")
+    print(f"expected\t{expected}")
+    print(output == expected)

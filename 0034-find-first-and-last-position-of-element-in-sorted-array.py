@@ -174,35 +174,56 @@ class Solution:
 if __name__ == "__main__":
     nums = nums = [1, 4]
     target = 4
-    answer = Solution().searchRange(nums, target)
-    print(answer)
+    output = Solution().searchRange(nums, target)
+    expected = [1, 1]
+    print(f"\noutput\t\t{output}")
+    print(f"expected\t{expected}")
+    print(output == expected)
 
     nums = nums = [8, 8]
     target = 8
-    answer = Solution().searchRange(nums, target)
-    print(answer)
+    output = Solution().searchRange(nums, target)
+    expected = [0, 1]
+    print(f"\noutput\t\t{output}")
+    print(f"expected\t{expected}")
+    print(output == expected)
 
     nums = nums = [1]
     target = 1
-    answer = Solution().searchRange(nums, target)
-    print(answer)
+    output = Solution().searchRange(nums, target)
+    expected = [0, 0]
+    print(f"\noutput\t\t{output}")
+    print(f"expected\t{expected}")
+    print(output == expected)
 
     nums = nums = [1, 3]
     target = 1
-    answer = Solution().searchRange(nums, target)
-    print(answer)
+    output = Solution().searchRange(nums, target)
+    expected = [0, 0]
+    print(f"\noutput\t\t{output}")
+    print(f"expected\t{expected}")
+    print(output == expected)
 
     nums = nums = [1, 1, 2]
     target = 1
-    answer = Solution().searchRange(nums, target)
-    print(answer)
+    output = Solution().searchRange(nums, target)
+    expected = [0, 1]
+    print(f"\noutput\t\t{output}")
+    print(f"expected\t{expected}")
+    print(output == expected)
 
     nums = [5, 7, 7, 8, 8, 10]
     target = 8
-    answer = Solution().searchRange(nums, target)
-    print(answer)
+    output = Solution().searchRange(nums, target)
+    expected = [3, 4]
+    print(f"\noutput\t\t{output}")
+    print(f"expected\t{expected}")
+    print(output == expected)
 
     nums = [5, 7, 7, 8, 8, 10]
     target = 6
-    answer = Solution().searchRange(nums, target)
-    print(answer)
+    output = Solution().searchRange(nums, target)
+    expected = [-1, -1]
+    print(f"\noutput\t\t{output}")
+    print(f"expected\t{expected}")
+    print(output == expected)

@@ -68,4 +68,8 @@ if __name__ == "__main__":
     nums2, n = [2, 5, 6], 3
 
     Solution().merge(nums1, m, nums2, n)
-    print(nums1)
+    output = nums1
+    expected = [1, 2, 2, 3, 5, 6]
+    print(f"\noutput\t\t{output}")
+    print(f"expected\t{expected}")
+    print(output == expected)

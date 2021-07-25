@@ -9,7 +9,7 @@ Do not allocate extra space for another array, you must do this by modifying the
 
 Clarification:
 
-Confused why the returned value is an integer but your answer is an array?
+Confused why the returned value is an integer but your output is an array?
 
 Note that the input array is passed in by reference, which means a modification to the input array will be known to the caller as well.
 
@@ -83,6 +83,9 @@ class Solution:
 
 if __name__ == "__main__":
     nums = [0, 0, 1, 1, 1, 2, 2, 3, 3, 4]
-    answer = Solution().removeDuplicates(nums)
-    print(answer)
-    print(nums)
+    output = Solution().removeDuplicates(nums)
+    output = (output, nums[:output])
+    expected = (5, [0, 1, 2, 3, 4])
+    print(f"\noutput\t\t{output}")
+    print(f"expected\t{expected}")
+    print(output == expected)

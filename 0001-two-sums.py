@@ -7,14 +7,14 @@ Given an array of integers nums and an integer target, return indices of the two
 
 You may assume that each input would have exactly one solution, and you may not use the same element twice.
 
-You can return the answer in any order.
+You can return the output in any order.
 
 Constraints:
 
 2 <= nums.length <= 104
 -109 <= nums[i] <= 109
 -109 <= target <= 109
-Only one valid answer exists.
+Only one valid output exists.
 """
 from typing import List
 
@@ -74,13 +74,22 @@ class Solution:
 
 if __name__ == "__main__":
     nums, target = [-1, -2, -3, -4, -5], -8
-    answer = Solution().twoSum(nums, target)
-    print(answer)
+    output = Solution().twoSum(nums, target)
+    expected = [4, 2]
+    print(f"\noutput\t\t{output}")
+    print(f"expected\t{expected}")
+    print(output == expected)
 
     nums, target = [2, 7, 11, 15], 18
-    answer = Solution().twoSum(nums, target)
-    print(answer)
+    output = Solution().twoSum(nums, target)
+    expected = [2, 1]
+    print(f"\noutput\t\t{output}")
+    print(f"expected\t{expected}")
+    print(output == expected)
 
     nums, target = ([3, 3], 6)
-    answer = Solution().twoSum(nums, target)
-    print(answer)
+    output = Solution().twoSum(nums, target)
+    expected = [1, 0]
+    print(f"\noutput\t\t{output}")
+    print(f"expected\t{expected}")
+    print(output == expected)

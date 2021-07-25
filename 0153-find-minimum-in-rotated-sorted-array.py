@@ -50,17 +50,29 @@ class Solution:
 
 if __name__ == "__main__":
     nums = [3, 4, 5, 1, 2]
-    answer = Solution().findMin(nums)
-    print(answer)
+    output = Solution().findMin(nums)
+    expected = 1
+    print(f"\noutput\t\t{output}")
+    print(f"expected\t{expected}")
+    print(output == expected)
 
     nums = [4, 5, 6, 7, 0, 1, 2]
-    answer = Solution().findMin(nums)
-    print(answer)
+    output = Solution().findMin(nums)
+    expected = 0
+    print(f"\noutput\t\t{output}")
+    print(f"expected\t{expected}")
+    print(output == expected)
 
     nums = [11, 13, 15, 17]
-    answer = Solution().findMin(nums)
-    print(answer)
+    output = Solution().findMin(nums)
+    expected = 11
+    print(f"\noutput\t\t{output}")
+    print(f"expected\t{expected}")
+    print(output == expected)
 
     nums = [5, 1, 2, 3, 4]
-    answer = Solution().findMin(nums)
-    print(answer)
+    output = Solution().findMin(nums)
+    expected = 1
+    print(f"\noutput\t\t{output}")
+    print(f"expected\t{expected}")
+    print(output == expected)

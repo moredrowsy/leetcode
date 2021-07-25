@@ -74,19 +74,28 @@ if __name__ == "__main__":
             [0, 0, 0]]
     source = Point(2, 0)
     destination = Point(2, 2)
-    answer = Solution().shortestPath(grid, source, destination)
-    print(answer)
+    output = Solution().shortestPath(grid, source, destination)
+    expected = 2
+    print(f"\noutput\t\t{output}")
+    print(f"expected\t{expected}")
+    print(output == expected)
 
     grid = [[0, 1, 0],
             [0, 0, 1],
             [0, 0, 0]]
     source = Point(2, 0)
     destination = Point(2, 2)
-    answer = Solution().shortestPath(grid, source, destination)
-    print(answer)
+    output = Solution().shortestPath(grid, source, destination)
+    expected = -1
+    print(f"\noutput\t\t{output}")
+    print(f"expected\t{expected}")
+    print(output == expected)
 
     grid = [[0, 1, 0], [0, 0, 0], [0, 0, 0]]
     source = Point(2, 0)
     destination = Point(2, 2)
-    answer = Solution().shortestPath(grid, source, destination)
-    print(answer)
+    output = Solution().shortestPath(grid, source, destination)
+    expected = 6
+    print(f"\noutput\t\t{output}")
+    print(f"expected\t{expected}")
+    print(output == expected)

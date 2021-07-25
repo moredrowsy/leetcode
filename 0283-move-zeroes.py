@@ -58,6 +58,9 @@ class Solution:
 
 if __name__ == "__main__":
     nums = [1, 0]
-    solution = Solution()
-    solution.moveZeroes(nums)
-    print(nums)
+    Solution().moveZeroes(nums)
+    output = nums
+    expected = [1, 0]
+    print(f"\noutput\t\t{output}")
+    print(f"expected\t{expected}")
+    print(output == expected)

@@ -74,23 +74,35 @@ if __name__ == "__main__":
     arr = [1, 2, 3, 4, 5]
     k = 4
     x = 3
-    answer = Solution().findClosestElements(arr, k, x)
-    print(answer)
+    output = Solution().findClosestElements(arr, k, x)
+    expected = [1, 2, 3, 4]
+    print(f"\noutput\t\t{output}")
+    print(f"expected\t{expected}")
+    print(output == expected)
 
     arr = [1, 2, 3, 4, 5]
     k = 4
     x = -1
-    answer = Solution().findClosestElements(arr, k, x)
-    print(answer)
+    output = Solution().findClosestElements(arr, k, x)
+    expected = [1, 2, 3, 4]
+    print(f"\noutput\t\t{output}")
+    print(f"expected\t{expected}")
+    print(output == expected)
 
     arr = [1]
     k = 1
     x = 1
-    answer = Solution().findClosestElements(arr, k, x)
-    print(answer)
+    output = Solution().findClosestElements(arr, k, x)
+    expected = [1]
+    print(f"\noutput\t\t{output}")
+    print(f"expected\t{expected}")
+    print(output == expected)
 
     arr = [-2, -1, 1, 2, 3, 4, 5]
     k = 7
     x = 3
-    answer = Solution().findClosestElements(arr, k, x)
-    print(answer)
+    output = Solution().findClosestElements(arr, k, x)
+    expected = [-2, -1, 1, 2, 3, 4, 5]
+    print(f"\noutput\t\t{output}")
+    print(f"expected\t{expected}")
+    print(output == expected)

@@ -95,51 +95,71 @@ class Solution:
 
 if __name__ == "__main__":
     nums = [1]
-    answer = Solution().findPeakElement(nums)
-    print(nums)
-    print(f"{nums[answer]} @ {answer}", end="\n\n")
+    output = Solution().findPeakElement(nums)
+    expected = 0
+    print(f"\noutput\t\t{output}")
+    print(f"expected\t{expected}")
+    print(output == expected)
 
     nums = [1, 2]
-    answer = Solution().findPeakElement(nums)
-    print(nums)
-    print(f"{nums[answer]} @ {answer}", end="\n\n")
+    output = Solution().findPeakElement(nums)
+    expected = 1
+    print(f"\noutput\t\t{output}")
+    print(f"expected\t{expected}")
+    print(output == expected)
 
     nums = [2, 1]
-    answer = Solution().findPeakElement(nums)
-    print(nums)
-    print(f"{nums[answer]} @ {answer}", end="\n\n")
+    output = Solution().findPeakElement(nums)
+    expected = 0
+    print(f"\noutput\t\t{output}")
+    print(f"expected\t{expected}")
+    print(output == expected)
 
     nums = [3, 1, 2]
-    answer = Solution().findPeakElement(nums)
-    print(nums)
-    print(f"{nums[answer]} @ {answer}", end="\n\n")
+    output = Solution().findPeakElement(nums)
+    expected = 0
+    print(f"\noutput\t\t{output}")
+    print(f"expected\t{expected}")
+    print(output == expected)
 
     nums = [3, 2, 1]
-    answer = Solution().findPeakElement(nums)
-    print(nums)
-    print(f"{nums[answer]} @ {answer}", end="\n\n")
+    output = Solution().findPeakElement(nums)
+    expected = 0
+    print(f"\noutput\t\t{output}")
+    print(f"expected\t{expected}")
+    print(output == expected)
 
     nums = [1, 2, 3, 1]
-    answer = Solution().findPeakElement(nums)
-    print(nums)
-    print(f"{nums[answer]} @ {answer}", end="\n\n")
+    output = Solution().findPeakElement(nums)
+    expected = 2
+    print(f"\noutput\t\t{output}")
+    print(f"expected\t{expected}")
+    print(output == expected)
 
     nums = nums = [1, 2, 1, 3, 5, 6, 4]
-    answer = Solution().findPeakElement(nums)
-    print(nums)
-    print(f"{nums[answer]} @ {answer}", end="\n\n")
+    output = Solution().findPeakElement(nums)
+    expected = 5
+    print(f"\noutput\t\t{output}")
+    print(f"expected\t{expected}")
+    print(output == expected)
 
     nums = nums = [1, 2, 3, 4, 3]
-    answer = Solution().findPeakElement(nums)
-    print(nums)
-    print(f"{nums[answer]} @ {answer}", end="\n\n")
+    output = Solution().findPeakElement(nums)
+    expected = 3
+    print(f"\noutput\t\t{output}")
+    print(f"expected\t{expected}")
+    print(output == expected)
 
     nums = nums = [1, 2, 3, 4, 5, 2, 1]
-    answer = Solution().findPeakElement(nums)
-    print(nums)
-    print(f"{nums[answer]} @ {answer}", end="\n\n")
+    output = Solution().findPeakElement(nums)
+    expected = 4
+    print(f"\noutput\t\t{output}")
+    print(f"expected\t{expected}")
+    print(output == expected)
 
     nums = nums = [1, 3, 2, 1]
-    answer = Solution().findPeakElement(nums)
-    print(nums)
-    print(f"{nums[answer]} @ {answer}", end="\n\n")
+    output = Solution().findPeakElement(nums)
+    expected = 1
+    print(f"\noutput\t\t{output}")
+    print(f"expected\t{expected}")
+    print(output == expected)

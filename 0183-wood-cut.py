@@ -64,10 +64,16 @@ class Solution:
 if __name__ == "__main__":
     L = [232, 124, 456]
     k = 7
-    answer = Solution().woodCut(L, k)
-    print(answer)
+    output = Solution().woodCut(L, k)
+    expected = 114
+    print(f"\noutput\t\t{output}")
+    print(f"expected\t{expected}")
+    print(output == expected)
 
     L = [1, 2, 3]
-    k = 7
-    answer = Solution().woodCut(L, k)
-    print(answer)
+    k = 0
+    output = Solution().woodCut(L, k)
+    expected = 3
+    print(f"\noutput\t\t{output}")
+    print(f"expected\t{expected}")
+    print(output == expected)

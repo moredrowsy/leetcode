@@ -25,6 +25,14 @@ class Solution:
     def flatten(self, root: TreeNode) -> None:
         """
         Do not return anything, modify root in-place instead.
+
+        Time Complexity
+        ---------------
+        O(n)
+
+        Space Complexity
+        ----------------
+        O(n)
         """
         if root:
             if self.last_node:
@@ -41,7 +49,10 @@ if __name__ == "__main__":
     nodes = [1, 2, 5, 3, 4, None, 6]
     nodes = [TreeNode(node) if node else None for node in nodes]
     tree = TreeNode.get_tree_from_treenode_list(nodes)
-    solution = Solution()
-    solution.flatten(tree)
-    answer = tree.get_queue()
-    print(answer)
+    Solution().flatten(tree)
+    output = tree.get_queue()
+    expected = [1, None, 2, None, 3, None, 4, None, 5, None, 6, None, None]
+    expected = [TreeNode(i) if i else None for i in expected]
+    print(f"\noutput\t\t{output}")
+    print(f"expected\t{expected}")
+    print(output == expected)

@@ -56,13 +56,22 @@ if __name__ == "__main__":
         [14, 19, 20, 21, 8],
         [13, 12, 11, 10, 9]
     ]
-    answer = Solution().longestContinuousIncreasingSubsequence2(matrix)
-    print(answer)
+    output = Solution().longestContinuousIncreasingSubsequence2(matrix)
+    expected = 25
+    print(f"\noutput\t\t{output}")
+    print(f"expected\t{expected}")
+    print(output == expected)
 
     matrix = [[1, 2], [5, 3]]
-    answer = Solution().longestContinuousIncreasingSubsequence2(matrix)
-    print(answer)
+    output = Solution().longestContinuousIncreasingSubsequence2(matrix)
+    expected = 4
+    print(f"\noutput\t\t{output}")
+    print(f"expected\t{expected}")
+    print(output == expected)
 
     matrix = [[1, 5, 3], [4, 10, 9], [2, 8, 7]]
-    answer = Solution().longestContinuousIncreasingSubsequence2(matrix)
-    print(answer)
+    output = Solution().longestContinuousIncreasingSubsequence2(matrix)
+    expected = 3
+    print(f"\noutput\t\t{output}")
+    print(f"expected\t{expected}")
+    print(output == expected)

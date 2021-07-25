@@ -57,10 +57,16 @@ class Solution:
 if __name__ == "__main__":
     pages = [3, 2, 4]
     k = 2
-    answer = Solution().copyBooks(pages, k)
-    print(answer)
+    output = Solution().copyBooks(pages, k)
+    expected = 5
+    print(f"\noutput\t\t{output}")
+    print(f"expected\t{expected}")
+    print(output == expected)
 
     pages = [3, 2, 4]
     k = 3
-    answer = Solution().copyBooks(pages, k)
-    print(answer)
+    output = Solution().copyBooks(pages, k)
+    expected = 4
+    print(f"\noutput\t\t{output}")
+    print(f"expected\t{expected}")
+    print(output == expected)

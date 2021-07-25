@@ -19,6 +19,15 @@ from typing import List
 
 class Solution:
     def minimumTotal(self, triangle: List[List[int]]) -> int:
+        """
+        Time Complexity
+        ---------------
+        O(n^2)
+
+        Space Complexity
+        ----------------
+        O(1)
+        """
         if triangle:
             rows = len(triangle)
 
@@ -42,5 +51,8 @@ class Solution:
 
 if __name__ == "__main__":
     triangle = [[2], [3, 4], [6, 5, 7], [4, 1, 8, 3]]
-    answer = Solution().minimumTotal(triangle)
-    print(answer)
+    output = Solution().minimumTotal(triangle)
+    expected = 11
+    print(f"\noutput\t\t{output}")
+    print(f"expected\t{expected}")
+    print(output == expected)

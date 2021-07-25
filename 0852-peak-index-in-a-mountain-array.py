@@ -110,21 +110,36 @@ class Solution:
 
 if __name__ == "__main__":
     arr = [0, 1, 0]
-    answer = Solution().peakIndexInMountainArray(arr)
-    print(answer)
+    output = Solution().peakIndexInMountainArray(arr)
+    expected = 1
+    print(f"\noutput\t\t{output}")
+    print(f"expected\t{expected}")
+    print(output == expected)
 
     arr = [0, 2, 1, 0]
-    answer = Solution().peakIndexInMountainArray(arr)
-    print(answer)
+    output = Solution().peakIndexInMountainArray(arr)
+    expected = 1
+    print(f"\noutput\t\t{output}")
+    print(f"expected\t{expected}")
+    print(output == expected)
 
     arr = [0, 10, 5, 2]
-    answer = Solution().peakIndexInMountainArray(arr)
-    print(answer)
+    output = Solution().peakIndexInMountainArray(arr)
+    expected = 1
+    print(f"\noutput\t\t{output}")
+    print(f"expected\t{expected}")
+    print(output == expected)
 
     arr = [3, 4, 5, 1]
-    answer = Solution().peakIndexInMountainArray(arr)
-    print(answer)
+    output = Solution().peakIndexInMountainArray(arr)
+    expected = 2
+    print(f"\noutput\t\t{output}")
+    print(f"expected\t{expected}")
+    print(output == expected)
 
     arr = [24, 69, 100, 99, 79, 78, 67, 36, 26, 19]
-    answer = Solution().peakIndexInMountainArray(arr)
-    print(answer)
+    output = Solution().peakIndexInMountainArray(arr)
+    expected = 2
+    print(f"\noutput\t\t{output}")
+    print(f"expected\t{expected}")
+    print(output == expected)
