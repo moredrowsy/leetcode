@@ -86,7 +86,7 @@ class Solution:
         results = []
 
         n = len(nums)
-        if nums and n > 1:
+        if n > 1:
             left, right = 0, 0
 
             # Find global min left and max right

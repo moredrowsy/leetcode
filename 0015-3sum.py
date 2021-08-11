@@ -29,7 +29,7 @@ class Solution:
         results = []
 
         n = len(nums)
-        if nums and n > 2:
+        if n > 2:
             nums = sorted(nums)
 
             for i in range(n-2):
