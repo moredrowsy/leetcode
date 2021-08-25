@@ -51,7 +51,7 @@ class TreeNode:
         return f"{self.val}"
 
     def __eq__(self, o: object) -> bool:
-        return self.val == o.val
+        return self.val == o.val if o else False
 
     def insert(self, item):
         """Insert nodes by level from left to right"""
@@ -101,3 +101,28 @@ class TreeNode:
 
         self._get_queue(root.left, queue)
         self._get_queue(root.right, queue)
+
+
+class ParentTreeNode(TreeNode):
+    def __init__(self, val):
+        super().__init__(val)
+        self.parent = None
+
+    @classmethod
+    def get_parent_tree_from_treenode_list(cls, treenodes):
+        queue = deque(treenodes)
+        root = queue.popleft()
+        roots = deque([root])
+
+        while queue and roots:
+            node = roots.popleft()
+            node.left = queue.popleft()
+            node.left.parent = node
+            node.right = queue.popleft() if queue else None
+            if node.right:
+                node.right.parent = node
+
+            roots.append(node.left)
+            roots.append(node.right)
+
+        return root

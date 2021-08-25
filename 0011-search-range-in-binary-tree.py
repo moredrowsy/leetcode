@@ -19,20 +19,19 @@ class Solution:
 
     def searchRange(self, root, k1, k2):
         output = []
-        self.bst(root, k1, k2, output)
-
+        self.dfs(root, k1, k2, output)
         return output
 
-    def bst(self, root, k1, k2, output):
-        if root:
-            if root.val > k1:
-                self.bst(root.left, k1, k2, output)
+    def dfs(self, node, k1, k2, output):
+        if node:
+            if node.val > k1:
+                self.dfs(node.left, k1, k2, output)
 
-            if k1 <= root.val <= k2:
-                output.append(root.val)
+            if k1 <= node.val <= k2:
+                output.append(node.val)
 
-            if root.val < k2:
-                self.bst(root.right, k1, k2, output)
+            if node.val < k2:
+                self.dfs(node.right, k1, k2, output)
 
 
 if __name__ == "__main__":
