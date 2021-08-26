@@ -27,6 +27,15 @@ from typing import List
 
 class Solution:
     def searchMatrix(self, matrix: List[List[int]], target: int) -> bool:
+        """
+        Time Complexity
+        ---------------
+        O(m*n)
+
+        Space Complexity
+        ----------------
+        O(m*n)
+        """
         if matrix == [] or matrix[0] == []:
             return 0
 

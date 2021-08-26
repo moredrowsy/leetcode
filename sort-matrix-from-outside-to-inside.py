@@ -7,6 +7,14 @@ class Solution:
     def sort_matrix(self, matrix):
         """
         Sort outside and then sort inside
+
+        Time Complexity
+        ---------------
+        O(n log n)
+
+        Space Complexity
+        ----------------
+        O(n log n)
         """
         m, n = len(matrix), len(matrix[0])
 

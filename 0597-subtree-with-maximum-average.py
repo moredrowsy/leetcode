@@ -25,6 +25,15 @@ class Solution:
     max_node = None
 
     def findSubtree2(self, root):
+        """
+        Time Complexity
+        ---------------
+        O(n)
+
+        Space Complexity
+        ----------------
+        O(n)
+        """
         self.dfs(root, 0, 0)
         return self.max_node
 

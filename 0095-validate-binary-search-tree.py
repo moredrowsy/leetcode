@@ -33,6 +33,14 @@ class Solution:
         """
         1. Max left must be smaller than node
         2. Min right must be greater than node
+
+        Time Complexity
+        ---------------
+        O(n)
+
+        Space Complexity
+        ----------------
+        O(n)
         """
         _, __, isValid = self.min_max_bst(root)
         return isValid

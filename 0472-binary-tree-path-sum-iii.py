@@ -26,6 +26,15 @@ class Solution:
     """
 
     def binaryTreePathSum3(self, root, target):
+        """
+        Time Complexity
+        ---------------
+        O(n^2)
+
+        Space Complexity
+        ----------------
+        O(n^2)
+        """
         paths = []
         self.dfs(root, target, paths)
         return paths

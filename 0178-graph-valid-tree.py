@@ -27,6 +27,14 @@ class Solution:
 
         NOTE
         No duplicate edges
+
+        Time Complexity
+        ---------------
+        O(n)
+
+        Space Complexity
+        ----------------
+        O(n)
         """
         from collections import defaultdict, deque
 

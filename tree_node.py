@@ -6,6 +6,9 @@ class TreeNode:
 
     @classmethod
     def get_tree_from_treenode_list(cls, treenodes):
+        if not treenodes:
+            return None
+
         queue = deque(treenodes)
         root = queue.popleft()
         roots = deque([root])

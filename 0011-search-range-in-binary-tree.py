@@ -18,6 +18,15 @@ class Solution:
     """
 
     def searchRange(self, root, k1, k2):
+        """
+        Time Complexity
+        ---------------
+        O(n)
+
+        Space Complexity
+        ----------------
+        O(n)
+        """
         output = []
         self.dfs(root, k1, k2, output)
         return output

@@ -15,6 +15,15 @@ class Solution:
     """
 
     def zombie(self, grid):
+        """
+        Time Complexity
+        ---------------
+        O(n)
+
+        Space Complexity
+        ----------------
+        O(n)
+        """
         if not grid or not grid[0]:
             return -1
 
