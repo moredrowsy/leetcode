@@ -5,9 +5,8 @@ https://www.lintcode.com/problem/472/
 
 Give a binary tree, and a target number, find all path that the sum of nodes equal to target, the path could be start and end at any node in the tree.
 """
-
-
 from tree_node import ParentTreeNode
+
 
 """
 Definition of ParentTreeNode:
