@@ -12,11 +12,12 @@ class TreeNode:
 
         while queue and roots:
             node = roots.popleft()
-            node.left = queue.popleft()
-            node.right = queue.popleft() if queue else None
+            if node:
+                node.left = queue.popleft()
+                node.right = queue.popleft() if queue else None
 
-            roots.append(node.left)
-            roots.append(node.right)
+                roots.append(node.left)
+                roots.append(node.right)
 
         return root
 
