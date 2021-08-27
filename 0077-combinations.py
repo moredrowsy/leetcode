@@ -27,9 +27,7 @@ class Solution:
 
         for i in range(start, n):
             combination.append(i)
-
             self.dfs(n, k, i+1, combination, combinations)
-
             combination.pop()
 
 

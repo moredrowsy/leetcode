@@ -20,6 +20,7 @@ class Solution:
     def subsets(self, nums: List[int]) -> List[List[int]]:
         subsets = []
         if nums:
+            nums.sort()
             self.dfs(nums, 0, [], subsets)
         return subsets
 
