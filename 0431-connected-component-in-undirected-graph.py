@@ -45,16 +45,16 @@ class Solution:
 
         return paths
 
-    def bfs(self, node, visited, paths):
-        queue = deque([node])
-        visited.add(node.label)
+    def bfs(self, root, visited, paths):
+        queue = deque([root])
+        visited.add(root.label)
         path = []
 
         while queue:
-            q_node = queue.popleft()
-            path.append(q_node.label)
+            node = queue.popleft()
+            path.append(node.label)
 
-            for neighbor in q_node.neighbors:
+            for neighbor in node.neighbors:
                 if neighbor.label not in visited:
                     visited.add(neighbor.label)
                     queue.append(neighbor)

@@ -45,41 +45,22 @@ class Solution:
 
         while queue:
             size = len(queue)
-            head = list_node = None
+            list_node = head = ListNode(None)
 
             for _ in range(size):
                 node = queue.popleft()
 
-                if list_node:
-                    list_node.next = ListNode(node.val)
-                    list_node = list_node.next
-                else:
-                    head = ListNode(node.val)
-                    list_node = head
+                list_node.next = ListNode(node.val)
+                list_node = list_node.next
 
                 if node.left:
                     queue.append(node.left)
                 if node.right:
                     queue.append(node.right)
 
-            lists.append(head)
+            lists.append(head.next)
 
         return lists
-
-
-def output_to_string(output):
-    string = ""
-    while output:
-        list_node = output.pop(0)
-
-        while list_node:
-            string += str(list_node.val)
-            list_node = list_node.next
-            string += "->"
-
-        string += "null,"
-    string = string[:-1]
-    return string
 
 
 if __name__ == "__main__":
@@ -87,7 +68,7 @@ if __name__ == "__main__":
     nodes = [TreeNode(node) if node else None for node in nodes]
     tree = TreeNode.get_tree_from_treenode_list(nodes)
     output = Solution().binaryTreeToLists(tree)
-    output_str = output_to_string(output)
+    output_str = ListNode.print_list_node(output)
     expected = "1->null,2->3->null,4->null"
     print(f"\noutput\t\t{output_str}")
     print(f"expected\t{expected}")
@@ -97,8 +78,18 @@ if __name__ == "__main__":
     nodes = [TreeNode(node) if node else None for node in nodes]
     tree = TreeNode.get_tree_from_treenode_list(nodes)
     output = Solution().binaryTreeToLists(tree)
-    output_str = output_to_string(output)
+    output_str = ListNode.print_list_node(output)
     expected = ""
+    print(f"\noutput\t\t{output_str}")
+    print(f"expected\t{expected}")
+    print(output_str == expected)
+
+    nodes = [1, None, 2, 3]
+    nodes = [TreeNode(node) if node else None for node in nodes]
+    tree = TreeNode.get_tree_from_treenode_list(nodes)
+    output = Solution().binaryTreeToLists(tree)
+    output_str = ListNode.print_list_node(output)
+    expected = "1->null,2->null,3->null"
     print(f"\noutput\t\t{output_str}")
     print(f"expected\t{expected}")
     print(output_str == expected)

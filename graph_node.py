@@ -44,3 +44,6 @@ class UndirectedGraphNode:
 
     def __eq__(self, o: object) -> bool:
         return self.label == o.label if o else False
+
+    def __hash__(self) -> int:
+        return self.label
