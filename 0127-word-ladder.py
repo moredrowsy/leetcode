@@ -38,7 +38,7 @@ class Solution:
         ----------------
         O(n * 26 * l^2)
         """
-        words = {s for s in wordList}
+        words = set(wordList)
         distance = 0
         queue = deque([beginWord])
 
