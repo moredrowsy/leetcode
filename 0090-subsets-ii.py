@@ -47,3 +47,17 @@ if __name__ == "__main__":
     print(f"\noutput\t\t{output}")
     print(f"expected\t{expected}")
     print(status)
+
+    nums = [0]
+    output = Solution().subsetsWithDup(nums)
+    expected = [[], [0]]
+
+    status = True
+    for o in output:
+        if o not in expected:
+            status = False
+            break
+
+    print(f"\noutput\t\t{output}")
+    print(f"expected\t{expected}")
+    print(status)

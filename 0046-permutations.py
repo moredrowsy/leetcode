@@ -19,6 +19,7 @@ class Solution:
         output = []
 
         if nums:
+            nums.sort()
             visited = set()
             permutation = []
             self.dfs(nums, visited, permutation, output)
@@ -53,6 +54,42 @@ if __name__ == "__main__":
     output = Solution().permute(nums)
     expected = [[1, 2, 3], [1, 3, 2], [2, 1, 3],
                 [2, 3, 1], [3, 1, 2], [3, 2, 1]]
+
+    status = True
+    for o in output:
+        if o not in expected:
+            status = False
+            break
+
     print(f"\noutput\t\t{output}")
     print(f"expected\t{expected}")
-    print(output == expected)
+    print(status)
+
+    nums = [0, 1]
+    output = Solution().permute(nums)
+    expected = [[0, 1], [1, 0]]
+
+    status = True
+    for o in output:
+        if o not in expected:
+            status = False
+            break
+
+    print(f"\noutput\t\t{output}")
+    print(f"expected\t{expected}")
+    print(status)
+    print(status)
+
+    nums = [1]
+    output = Solution().permute(nums)
+    expected = [[1]]
+
+    status = True
+    for o in output:
+        if o not in expected:
+            status = False
+            break
+
+    print(f"\noutput\t\t{output}")
+    print(f"expected\t{expected}")
+    print(status)

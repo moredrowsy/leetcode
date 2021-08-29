@@ -18,7 +18,7 @@ class Solution:
         output = []
 
         if nums:
-            nums = sorted(nums)
+            nums.sort()
             visited = [False] * len(nums)
             permutation = []
             self.dfs(nums, visited, permutation, output)
@@ -90,24 +90,73 @@ class Solution:
 
 
 if __name__ == "__main__":
+    nums = [1, 1]
+    output = Solution().permuteUnique(nums)
+    expected = [[1, 1]]
+
+    status = True
+    for o in output:
+        if o not in expected:
+            status = False
+            break
+
+    print(f"\noutput\t\t{output}")
+    print(f"expected\t{expected}")
+    print(status)
+
     nums = [2, 1, 1]
     output = Solution().permuteUnique(nums)
     expected = [[1, 1, 2], [1, 2, 1], [2, 1, 1]]
+
+    status = True
+    for o in output:
+        if o not in expected:
+            status = False
+            break
+
     print(f"\noutput\t\t{output}")
     print(f"expected\t{expected}")
-    print(output == expected)
+    print(status)
+
+    nums = [1, 2, 2]
+    output = Solution().permuteUnique(nums)
+    expected = [[1, 2, 2], [2, 1, 2], [2, 2, 1]]
+
+    status = True
+    for o in output:
+        if o not in expected:
+            status = False
+            break
+
+    print(f"\noutput\t\t{output}")
+    print(f"expected\t{expected}")
+    print(status)
 
     nums = [1, 2, 3]
     output = Solution().permuteUnique(nums)
     expected = [[1, 2, 3], [1, 3, 2], [2, 1, 3],
                 [2, 3, 1], [3, 1, 2], [3, 2, 1]]
+
+    status = True
+    for o in output:
+        if o not in expected:
+            status = False
+            break
+
     print(f"\noutput\t\t{output}")
     print(f"expected\t{expected}")
-    print(output == expected)
+    print(status)
 
     nums = [3, 3, 0, 3]
     output = Solution().permuteUnique(nums)
     expected = [[0, 3, 3, 3], [3, 0, 3, 3], [3, 3, 0, 3], [3, 3, 3, 0]]
+
+    status = True
+    for o in output:
+        if o not in expected:
+            status = False
+            break
+
     print(f"\noutput\t\t{output}")
     print(f"expected\t{expected}")
-    print(output == expected)
+    print(status)
