@@ -1,4 +1,20 @@
 class UndirectedGraphNode:
+    def __init__(self, x: int):
+        self.label = int(x)
+        self.neighbors = []
+
+    def __repr__(self) -> str:
+        return f"{self.label}"
+
+    def __str__(self) -> str:
+        return f"{self.label}"
+
+    def __eq__(self, o: object) -> bool:
+        return self.label == o.label if o else False
+
+    def __hash__(self) -> int:
+        return id(self)
+
     @classmethod
     def input_to_undirected_graph_nodes(cls, string):
         output = []
@@ -31,19 +47,3 @@ class UndirectedGraphNode:
             output.append(undirected_graph_node)
 
         return output
-
-    def __init__(self, x: int):
-        self.label = int(x)
-        self.neighbors = []
-
-    def __repr__(self) -> str:
-        return f"{self.label}"
-
-    def __str__(self) -> str:
-        return f"{self.label}"
-
-    def __eq__(self, o: object) -> bool:
-        return self.label == o.label if o else False
-
-    def __hash__(self) -> int:
-        return id(self)

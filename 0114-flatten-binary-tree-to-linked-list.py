@@ -52,7 +52,7 @@ if __name__ == "__main__":
     Solution().flatten(tree)
     output = tree.get_queue()
     expected = [1, None, 2, None, 3, None, 4, None, 5, None, 6, None, None]
-    expected = [TreeNode(i) if i else None for i in expected]
+    expected = [TreeNode.find_node(tree, i) if i else None for i in expected]
     print(f"\noutput\t\t{output}")
     print(f"expected\t{expected}")
     print(output == expected)

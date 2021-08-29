@@ -51,7 +51,17 @@ if __name__ == "__main__":
     tree = TreeNode.get_tree_from_treenode_list(nodes)
     output = Solution().findSubtree(tree)
     expected = 1
-    expected = TreeNode(expected)
+    expected = TreeNode.find_node(tree, expected)
+    print(f"\noutput\t\t{output}")
+    print(f"expected\t{expected}")
+    print(output == expected)
+
+    nodes = [1]
+    nodes = [TreeNode(node) if node else None for node in nodes]
+    tree = TreeNode.get_tree_from_treenode_list(nodes)
+    output = Solution().findSubtree(tree)
+    expected = 1
+    expected = TreeNode.find_node(tree, expected)
     print(f"\noutput\t\t{output}")
     print(f"expected\t{expected}")
     print(output == expected)

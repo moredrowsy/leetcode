@@ -63,10 +63,69 @@ if __name__ == "__main__":
     nodes = [4, 3, 7, None, None, 5, 6]
     nodes = [TreeNode(node) if node else None for node in nodes]
     tree = TreeNode.get_tree_from_treenode_list(nodes)
-    a, b = nodes[5], nodes[6]
+    a = 3
+    b = 5
+    a = TreeNode.find_node(tree, a)
+    b = TreeNode.find_node(tree, b)
+    output = Solution().lowestCommonAncestor3(tree, a, b)
+    expected = 4
+    expected = TreeNode.find_node(tree, expected)
+    print(f"\noutput\t\t{output}")
+    print(f"expected\t{expected}")
+    print(output == expected)
+
+    nodes = [4, 3, 7, None, None, 5, 6]
+    nodes = [TreeNode(node) if node else None for node in nodes]
+    tree = TreeNode.get_tree_from_treenode_list(nodes)
+    a = 5
+    b = 6
+    a = TreeNode.find_node(tree, a)
+    b = TreeNode.find_node(tree, b)
     output = Solution().lowestCommonAncestor3(tree, a, b)
     expected = 7
-    expected = TreeNode(expected)
+    expected = TreeNode.find_node(tree, expected)
+    print(f"\noutput\t\t{output}")
+    print(f"expected\t{expected}")
+    print(output == expected)
+
+    nodes = [4, 3, 7, None, None, 5, 6]
+    nodes = [TreeNode(node) if node else None for node in nodes]
+    tree = TreeNode.get_tree_from_treenode_list(nodes)
+    a = 6
+    b = 7
+    a = TreeNode.find_node(tree, a)
+    b = TreeNode.find_node(tree, b)
+    output = Solution().lowestCommonAncestor3(tree, a, b)
+    expected = 7
+    expected = TreeNode.find_node(tree, expected)
+    print(f"\noutput\t\t{output}")
+    print(f"expected\t{expected}")
+    print(output == expected)
+
+    nodes = [4, 3, 7, None, None, 5, 6]
+    nodes = [TreeNode(node) if node else None for node in nodes]
+    tree = TreeNode.get_tree_from_treenode_list(nodes)
+    a = 5
+    b = 8
+    a = TreeNode.find_node(tree, a)
+    b = TreeNode.find_node(tree, b)
+    output = Solution().lowestCommonAncestor3(tree, a, b)
+    expected = None
+    expected = TreeNode.find_node(tree, expected)
+    print(f"\noutput\t\t{output}")
+    print(f"expected\t{expected}")
+    print(output == expected)
+
+    nodes = [1]
+    nodes = [TreeNode(node) if node else None for node in nodes]
+    tree = TreeNode.get_tree_from_treenode_list(nodes)
+    a = 1
+    b = 1
+    a = TreeNode.find_node(tree, a)
+    b = TreeNode.find_node(tree, b)
+    output = Solution().lowestCommonAncestor3(tree, a, b)
+    expected = 1
+    expected = TreeNode.find_node(tree, expected)
     print(f"\noutput\t\t{output}")
     print(f"expected\t{expected}")
     print(output == expected)

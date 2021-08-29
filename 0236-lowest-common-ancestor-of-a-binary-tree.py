@@ -55,30 +55,17 @@ class Solution:
         return None
 
 
-def get_pq(root: 'TreeNode', p: int, q: int, pq: List['TreeNode']):
-    """Parse input to prepare for solution arguments"""
-    if root:
-        if root.val == p:
-            pq[0] = root
-        if root.val == q:
-            pq[1] = root
-
-        get_pq(root.left, p, q, pq)
-        get_pq(root.right, p, q, pq)
-
-
 if __name__ == "__main__":
     nodes = [3, 5, 1, 6, 2, 0, 8, None, None, 7, 4]
     p = 5
     q = 1
     nodes = [TreeNode(node) if node else None for node in nodes]
     tree = TreeNode.get_tree_from_treenode_list(nodes)
-    pq = [None, None]
-    get_pq(tree, p, q, pq)
-    p, q = pq
+    p = TreeNode.find_node(tree, p)
+    q = TreeNode.find_node(tree, q)
     output = Solution().lowestCommonAncestor(tree, p, q)
     expected = 3
-    expected = TreeNode(expected)
+    expected = TreeNode.find_node(tree, expected)
 
     print(f"\noutput\t\t{output}")
     print(f"expected\t{expected}")
@@ -89,12 +76,11 @@ if __name__ == "__main__":
     q = 4
     nodes = [TreeNode(node) if node else None for node in nodes]
     tree = TreeNode.get_tree_from_treenode_list(nodes)
-    pq = [None, None]
-    get_pq(tree, p, q, pq)
-    p, q = pq
+    p = TreeNode.find_node(tree, p)
+    q = TreeNode.find_node(tree, q)
     output = Solution().lowestCommonAncestor(tree, p, q)
     expected = 5
-    expected = TreeNode(expected)
+    expected = TreeNode.find_node(tree, expected)
 
     print(f"\noutput\t\t{output}")
     print(f"expected\t{expected}")
@@ -105,12 +91,11 @@ if __name__ == "__main__":
     q = 2
     nodes = [TreeNode(node) if node else None for node in nodes]
     tree = TreeNode.get_tree_from_treenode_list(nodes)
-    pq = [None, None]
-    get_pq(tree, p, q, pq)
-    p, q = pq
+    p = TreeNode.find_node(tree, p)
+    q = TreeNode.find_node(tree, q)
     output = Solution().lowestCommonAncestor(tree, p, q)
     expected = 1
-    expected = TreeNode(expected)
+    expected = TreeNode.find_node(tree, expected)
 
     print(f"\noutput\t\t{output}")
     print(f"expected\t{expected}")
