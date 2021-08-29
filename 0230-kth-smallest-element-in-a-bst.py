@@ -49,12 +49,18 @@ if __name__ == "__main__":
     nodes = [3, 1, 4, None, 2]
     nodes = [TreeNode(node) if node else None for node in nodes]
     tree = TreeNode.get_tree_from_treenode_list(nodes)
-    answer = Solution().kthSmallest(tree, k)
-    print(answer)
+    output = Solution().kthSmallest(tree, k)
+    expected = 1
+    print(f"\noutput\t\t{output}")
+    print(f"expected\t{expected}")
+    print(output == expected)
 
     k = 3
     nodes = [5, 3, 6, 2, 4, None, None, 1]
     nodes = [TreeNode(node) if node else None for node in nodes]
     tree = TreeNode.get_tree_from_treenode_list(nodes)
-    answer = Solution().kthSmallest(tree, k)
-    print(answer)
+    output = Solution().kthSmallest(tree, k)
+    expected = 3
+    print(f"\noutput\t\t{output}")
+    print(f"expected\t{expected}")
+    print(output == expected)

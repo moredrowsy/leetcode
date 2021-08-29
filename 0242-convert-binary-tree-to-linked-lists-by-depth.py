@@ -45,7 +45,7 @@ class Solution:
 
         while queue:
             size = len(queue)
-            list_node = head = ListNode(None)
+            list_node = head = ListNode(0)
 
             for _ in range(size):
                 node = queue.popleft()

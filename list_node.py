@@ -14,8 +14,8 @@ class ListNode:
         string = string[:-1]
         return string
 
-    def __init__(self, x):
-        self.val = x
+    def __init__(self, x: int):
+        self.val = int(x)
         self.next = None
 
     def __repr__(self) -> str:
@@ -26,3 +26,6 @@ class ListNode:
 
     def __eq__(self, o: object) -> bool:
         return self.val == o.val if o else False
+
+    def __hash__(self) -> int:
+        return id(self)

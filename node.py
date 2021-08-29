@@ -14,4 +14,4 @@ class Node:
         return self.val == o.val if o else False
 
     def __hash__(self) -> int:
-        return self.val
+        return id(self)

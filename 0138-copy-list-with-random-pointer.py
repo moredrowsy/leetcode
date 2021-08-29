@@ -49,8 +49,7 @@ class Solution:
         O(n)
         """
         nodes_map = {}
-        dummy = Node(0)
-        new_node = dummy
+        new_node = dummy = Node(0)
 
         # Copy linked list
         node = head
@@ -93,6 +92,29 @@ def input_to_head(nodes):
 
 if __name__ == "__main__":
     input_nodes = [[7, None], [13, 0], [11, 4], [10, 2], [1, 0]]
+    head = input_to_head(input_nodes)
+    output = Solution().copyRandomList(head)
+
+    status = True
+    node = head
+
+    try:
+        while node:
+            if node.val != output.val or node is output:
+                status = False
+                break
+
+            if node.random and (node.random is output.random or node.random.val != output.random.val):
+                status = False
+                break
+
+            node = node.next
+            output = output.next
+    except:
+        status = False
+
+    print(status)
+    input_nodes = [[3, None], [3, 0], [3, None]]
     head = input_to_head(input_nodes)
     output = Solution().copyRandomList(head)
 

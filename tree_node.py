@@ -44,8 +44,8 @@ class TreeNode:
                     queue.append(node.left)
                     queue.append(node.right)
 
-    def __init__(self, val):
-        self.val = val
+    def __init__(self, val: int):
+        self.val = int(val)
         self.left, self.right = None, None
 
     def __repr__(self) -> str:
@@ -56,6 +56,9 @@ class TreeNode:
 
     def __eq__(self, o: object) -> bool:
         return self.val == o.val if o else False
+
+    def __hash__(self) -> int:
+        return id(self)
 
     def insert(self, item):
         """Insert nodes by level from left to right"""

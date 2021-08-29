@@ -32,8 +32,8 @@ class UndirectedGraphNode:
 
         return output
 
-    def __init__(self, x):
-        self.label = x
+    def __init__(self, x: int):
+        self.label = int(x)
         self.neighbors = []
 
     def __repr__(self) -> str:
@@ -46,4 +46,4 @@ class UndirectedGraphNode:
         return self.label == o.label if o else False
 
     def __hash__(self) -> int:
-        return self.label
+        return id(self)
