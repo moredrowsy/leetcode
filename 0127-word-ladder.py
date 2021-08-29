@@ -26,8 +26,6 @@ from collections import deque
 class Solution:
     def ladderLength(self, beginWord: str, endWord: str, wordList: List[str]) -> int:
         """
-        Using dict to map values.
-
         Time Complexity
         ---------------
         O(n * 26 * l^2)

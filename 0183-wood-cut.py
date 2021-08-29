@@ -21,8 +21,6 @@ class Solution:
 
     def woodCut(self, L, k):
         """
-        Using dict to map values.
-
         Time Complexity
         ---------------
         O(n log n)

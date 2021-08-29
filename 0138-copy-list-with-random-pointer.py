@@ -38,8 +38,6 @@ class Node:
 class Solution:
     def copyRandomList(self, head: 'Node') -> 'Node':
         """
-        Using dict to map values.
-
         Time Complexity
         ---------------
         O(n)

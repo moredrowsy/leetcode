@@ -23,8 +23,6 @@ class Solution:
 
     def numIslands(self, grid: List[List[str]]) -> int:
         """
-        Using dict to map values.
-
         Time Complexity
         ---------------
         O(n)

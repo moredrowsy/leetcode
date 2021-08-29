@@ -17,8 +17,6 @@ class Solution:
 
     def anagrams(self, strs):
         """
-        Using dict to map values.
-
         Time Complexity
         ---------------
         O(n*klogk)
