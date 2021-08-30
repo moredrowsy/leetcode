@@ -21,7 +21,7 @@ class TreeNode:
 
 
 class Solution:
-    def __init__(self):
+    def __init__(self) -> None:
         self.k = 0
         self.kth_val = None
 

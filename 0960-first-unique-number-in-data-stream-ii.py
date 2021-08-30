@@ -26,7 +26,7 @@ class DataStream:
     O(n)
     """
 
-    def __init__(self):
+    def __init__(self) -> None:
         self.nums = []
         self.counts = defaultdict(int)
 

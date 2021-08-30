@@ -19,7 +19,7 @@ from tree_node import TreeNode
 
 
 class Solution:
-    def __init__(self):
+    def __init__(self) -> None:
         self.last_node = None
 
     def flatten(self, root: TreeNode) -> None:
