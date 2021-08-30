@@ -27,18 +27,19 @@ class Solution:
         @param root: the given BST
         @param target: the given target
         @return: the value in the BST that is closest to the target
-
-        Time Complexity
-        ---------------
-        O(n)
-
-        Space Complexity
-        ----------------
-        O(n)
         """
         return self.dfs_re(root, target)
 
     def dfs_iter(self, root, target):
+        """
+        Time Complexity
+        ---------------
+        O(log n)
+
+        Space Complexity
+        ----------------
+        O(log n)
+        """
         upper = root
         lower = root
         while root:
@@ -55,6 +56,15 @@ class Solution:
         return lower.val
 
     def dfs_re(self, root, target):
+        """
+        Time Complexity
+        ---------------
+        O(log n)
+
+        Space Complexity
+        ----------------
+        O(log n)
+        """
         lower = self.lower_bound(root, target)
         upper = self.upper_bound(root, target)
 
