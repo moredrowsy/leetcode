@@ -22,12 +22,13 @@ class TreeNode:
 
 
 class Solution:
+    """
+    @param root: the given BST
+    @param target: the given target
+    @return: the value in the BST that is closest to the target
+    """
+
     def closestValue(self, root, target):
-        """
-        @param root: the given BST
-        @param target: the given target
-        @return: the value in the BST that is closest to the target
-        """
         return self.dfs_re(root, target)
 
     def dfs_iter(self, root, target):

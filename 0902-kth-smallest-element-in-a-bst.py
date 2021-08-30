@@ -21,15 +21,15 @@ class TreeNode:
 
 
 class Solution:
-    def __init__(self) -> None:
-        self.k = 0
-        self.kth_val = None
-
     """
     @param root: the given BST
     @param k: the given k
     @return: the kth smallest element in BST
     """
+
+    def __init__(self) -> None:
+        self.k = 0
+        self.kth_val = None
 
     def kthSmallest(self, root, k):
         self.dfs(root, k)

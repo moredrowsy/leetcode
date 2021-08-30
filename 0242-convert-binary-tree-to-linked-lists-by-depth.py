@@ -25,8 +25,11 @@ class ListNode:
 
 
 class Solution:
-    # @param {TreeNode} root the root of binary tree
-    # @return {ListNode[]} a lists of linked list
+    """
+    @param {TreeNode} root the root of binary tree
+    @return {ListNode[]} a lists of linked list
+    """
+
     def binaryTreeToLists(self, root):
         """
         Time Complexity

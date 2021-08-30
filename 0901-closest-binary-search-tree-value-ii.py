@@ -26,13 +26,14 @@ class TreeNode:
 
 
 class Solution:
+    """
+    @param root: the given BST
+    @param target: the given target
+    @param k: the given k
+    @return: k values in the BST that are closest to the target
+    """
+
     def closestKValues(self, root, target, k):
-        """
-        @param root: the given BST
-        @param target: the given target
-        @param k: the given k
-        @return: k values in the BST that are closest to the target
-        """
         return self.dfs(root, target, k)
 
     def dfs(self, root, target, k):
