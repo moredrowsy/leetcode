@@ -71,7 +71,7 @@ if __name__ == "__main__":
     nodes = [TreeNode(node) if node else None for node in nodes]
     tree = TreeNode.get_tree_from_treenode_list(nodes)
     output = Solution().binaryTreeToLists(tree)
-    output_str = ListNode.print_list_node(output)
+    output_str = ListNode.print_list_nodes(output)
     expected = "1->null,2->3->null,4->null"
     print(f"\noutput\t\t{output_str}")
     print(f"expected\t{expected}")
@@ -81,7 +81,7 @@ if __name__ == "__main__":
     nodes = [TreeNode(node) if node else None for node in nodes]
     tree = TreeNode.get_tree_from_treenode_list(nodes)
     output = Solution().binaryTreeToLists(tree)
-    output_str = ListNode.print_list_node(output)
+    output_str = ListNode.print_list_nodes(output)
     expected = ""
     print(f"\noutput\t\t{output_str}")
     print(f"expected\t{expected}")
@@ -91,7 +91,7 @@ if __name__ == "__main__":
     nodes = [TreeNode(node) if node else None for node in nodes]
     tree = TreeNode.get_tree_from_treenode_list(nodes)
     output = Solution().binaryTreeToLists(tree)
-    output_str = ListNode.print_list_node(output)
+    output_str = ListNode.print_list_nodes(output)
     expected = "1->null,2->null,3->null"
     print(f"\noutput\t\t{output_str}")
     print(f"expected\t{expected}")

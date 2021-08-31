@@ -1,7 +1,10 @@
+from typing import List
+
+
 class ListNode:
-    def __init__(self, x: int):
+    def __init__(self, x: int = 0, next=None):
         self.val = int(x)
-        self.next = None
+        self.next = next
 
     def __repr__(self) -> str:
         return f"{self.val}"
@@ -16,16 +19,32 @@ class ListNode:
         return id(self)
 
     @classmethod
-    def print_list_node(cls, node):
+    def print(cls, node):
         string = ""
+
         while node:
-            list_node = node.pop(0)
+            string += str(node.val)
+            node = node.next
+            string += "->"
 
-            while list_node:
-                string += str(list_node.val)
-                list_node = list_node.next
-                string += "->"
+        string += "null,"
 
-            string += "null,"
-        string = string[:-1]
-        return string
+        return string[:-1]
+
+    @classmethod
+    def print_list_nodes(cls, nodes):
+        string = ""
+        for node in nodes:
+            string += ListNode.print(node)
+            string += ","
+        return string[:-1]
+
+    @classmethod
+    def get_head_from_list(cls, values):
+        list_node = dummy = ListNode()
+
+        for val in values:
+            list_node.next = ListNode(val)
+            list_node = list_node.next
+
+        return dummy.next
