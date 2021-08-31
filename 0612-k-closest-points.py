@@ -29,6 +29,15 @@ class Solution:
         return self.pq(points, origin, k)
 
     def pq(self, points, origin, k):
+        """
+        Time Complexity
+        ---------------
+        O(k + nlogn)
+
+        Space Complexity
+        ----------------
+        O(n)
+        """
         import heapq
         heap = []
 

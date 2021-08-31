@@ -22,8 +22,6 @@ from typing import List
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
         """
-        Using dict to map values.
-
         Time Complexity
         ---------------
         O(n)

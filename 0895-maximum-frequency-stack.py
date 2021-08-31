@@ -24,8 +24,6 @@ import heapq
 
 class FreqStack:
     """
-    Using dict to map values.
-
     Time Complexity
     ---------------
     O(log n)

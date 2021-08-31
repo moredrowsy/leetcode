@@ -37,8 +37,6 @@ class Solution:
 
     def dfs(self, root, k):
         """
-        Using dict to map values.
-
         Time Complexity
         ---------------
         O(n)

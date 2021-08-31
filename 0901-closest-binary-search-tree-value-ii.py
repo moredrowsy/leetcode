@@ -38,8 +38,6 @@ class Solution:
 
     def dfs(self, root, target, k):
         """
-        Using dict to map values.
-
         Time Complexity
         ---------------
         O(k + log n)

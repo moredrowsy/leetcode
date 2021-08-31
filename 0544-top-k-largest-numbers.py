@@ -18,6 +18,15 @@ class Solution:
         return self.pq(nums, k)
 
     def pq(self, nums, k):
+        """
+        Time Complexity
+        ---------------
+        O(k + nlogn)
+
+        Space Complexity
+        ----------------
+        O(n)
+        """
         import heapq
         heap = []
         for num in nums:
