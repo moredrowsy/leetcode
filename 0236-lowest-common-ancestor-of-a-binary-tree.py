@@ -15,7 +15,6 @@ All Node.val are unique.
 p != q
 p and q will exist in the tree.
 """
-from typing import List
 from tree_node import TreeNode
 
 

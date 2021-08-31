@@ -9,8 +9,8 @@ The nearest common ancestor of two nodes refers to the nearest common node among
 
 In addition to the left and right son pointers, each node also contains a father pointer, parent, pointing to its own father.
 """
-from typing import List
 from tree_node import ParentTreeNode, TreeNode
+from typing import List
 
 
 """
