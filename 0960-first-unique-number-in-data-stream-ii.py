@@ -58,12 +58,14 @@ def parse_args(args):
 
     for line in lines:
         arg = line.strip()
-        if arg:
-            if arg == "firstUnique()":
-                first_uniques.append(data_stream.firstUnique())
-            elif "add" in arg:
-                num = int(arg[arg.find('(')+1:arg.rfind(')')])
-                data_stream.add(num)
+        if not arg:
+            continue
+
+        if arg == "firstUnique()":
+            first_uniques.append(data_stream.firstUnique())
+        elif "add" in arg:
+            num = int(arg[arg.find('(')+1:arg.rfind(')')])
+            data_stream.add(num)
 
     return first_uniques
 
