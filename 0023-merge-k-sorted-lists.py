@@ -34,16 +34,15 @@ class Solution:
         ----------------
         O(n)
         """
-        import heapq
         setattr(ListNode, "__lt__", lambda self, other: self.val < other.val)
 
-        list_node = dummy = ListNode()
-
+        import heapq
         heap = []
         for node in lists:
             if node:
                 heapq.heappush(heap, node)
 
+        list_node = dummy = ListNode()
         while heap:
             l_node = heapq.heappop(heap)
             list_node.next = l_node
