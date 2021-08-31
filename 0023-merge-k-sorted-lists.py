@@ -25,13 +25,22 @@ class Solution:
         return self.pq(lists)
 
     def pq(self, lists: List[Optional[ListNode]]) -> Optional[ListNode]:
+        """
+        Time Complexity
+        ---------------
+        O(n log n)
+
+        Space Complexity
+        ----------------
+        O(n)
+        """
         import heapq
         setattr(ListNode, "__lt__", lambda self, other: self.val < other.val)
 
         list_node = dummy = ListNode()
 
         heap = []
-        for node in (lists):
+        for node in lists:
             if node:
                 heapq.heappush(heap, node)
 
