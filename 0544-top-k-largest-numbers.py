@@ -21,17 +21,22 @@ class Solution:
         """
         Time Complexity
         ---------------
-        O(k + nlogn)
+        O(n log k)
 
         Space Complexity
         ----------------
-        O(n)
+        O(k)
         """
         import heapq
         heap = []
+
         for num in nums:
-            heapq.heappush(heap, (-num, num))
-        return [heapq.heappop(heap)[1] for _ in range(k)]
+            heapq.heappush(heap, num)
+
+            if len(heap) > k:
+                heapq.heappop(heap)
+
+        return list(reversed([heapq.heappop(heap) for _ in range(k)]))
 
 
 if __name__ == "__main__":

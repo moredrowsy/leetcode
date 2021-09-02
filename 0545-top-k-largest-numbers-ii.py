@@ -24,14 +24,16 @@ class Solution:
         @param: num: Number to be added
         @return: nothing
         """
-        heapq.heappush(self.heap, (-num, num))
+        heapq.heappush(self.heap, num)
+        if len(self.heap) > self.k:
+            heapq.heappop(self.heap)
 
     def topk(self):
         """
         @return: Top k element
         """
-        nums = [heapq.heappop(self.heap)[1]
-                for _ in range(min(self.k, len(self.heap)))]
+        nums = list(reversed([heapq.heappop(self.heap)
+                              for _ in range(min(self.k, len(self.heap)))]))
         for num in nums:
             self.add(num)
         return nums
