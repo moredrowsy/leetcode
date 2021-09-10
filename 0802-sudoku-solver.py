@@ -33,6 +33,15 @@ class Solution:
 
     # @return True/False
     def dfs(self, board, row, col):
+        """
+        Time Complexity
+        ---------------
+        O(n^(n*n))
+
+        Space Complexity
+        ----------------
+        O(1)
+        """
         size = len(board)
 
         # exit case
