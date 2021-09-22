@@ -31,9 +31,6 @@ class Solution:
         ----------------
         O(n)
         """
-        if not envelopes:
-            return 0
-
         envelopes.sort(key=lambda x: (x[0], -x[1]))
 
         n = len(envelopes)
@@ -41,7 +38,7 @@ class Solution:
         dp[0] = -float('inf')
 
         longest = 0
-        for (_, h) in envelopes:
+        for _, h in envelopes:
             index = self.first_gte(dp, h)
             dp[index] = h
             longest = max(longest, index)
@@ -65,7 +62,7 @@ class Solution:
 
 
 if __name__ == "__main__":
-    envelopes = [[5, 4], [6, 4], [6, 7], [2, 3], [10, 11]]
+    envelopes = [[5, 4], [6, 4], [6, 7], [2, 3]]
     output = Solution().maxEnvelopes(envelopes)
     expected = 3
     print(f"\noutput\t\t{output}")
