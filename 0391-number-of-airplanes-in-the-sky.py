@@ -42,11 +42,11 @@ class Solution:
             time_to_airplanes[airplane.start] += 1
             time_to_airplanes[airplane.end] -= 1
 
-        keys = sorted(time_to_airplanes.keys())
+        times = sorted(time_to_airplanes.keys())
 
         airplanes_count, max_airplanes = 0, 0
-        for k in keys:
-            airplanes_count += time_to_airplanes[k]
+        for time in times:
+            airplanes_count += time_to_airplanes[time]
             max_airplanes = max(airplanes_count, max_airplanes)
 
         return max_airplanes

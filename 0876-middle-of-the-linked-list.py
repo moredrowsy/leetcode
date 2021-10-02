@@ -50,33 +50,33 @@ class Solution:
 
 if __name__ == "__main__":
     head = [1, 2, 3, 4]
-    head = ListNode.get_head_from_list(head)
+    head = ListNode.list_to_head(head)
     output = Solution().middleNode(head)
     output_str = ListNode.print(output)
     expected = [3, 4]
-    expected = ListNode.get_head_from_list(expected)
+    expected = ListNode.list_to_head(expected)
     expected_str = ListNode.print(expected)
     print(f"\noutput\t\t{output_str}")
     print(f"expected\t{expected_str}")
     print(output_str == expected_str)
 
     head = [1, 2, 3, 4, 5]
-    head = ListNode.get_head_from_list(head)
+    head = ListNode.list_to_head(head)
     output = Solution().middleNode(head)
     output_str = ListNode.print(output)
     expected = [3, 4, 5]
-    expected = ListNode.get_head_from_list(expected)
+    expected = ListNode.list_to_head(expected)
     expected_str = ListNode.print(expected)
     print(f"\noutput\t\t{output_str}")
     print(f"expected\t{expected_str}")
     print(output_str == expected_str)
 
     head = [1, 2, 3, 4, 5, 6]
-    head = ListNode.get_head_from_list(head)
+    head = ListNode.list_to_head(head)
     output = Solution().middleNode(head)
     output_str = ListNode.print(output)
     expected = [4, 5, 6]
-    expected = ListNode.get_head_from_list(expected)
+    expected = ListNode.list_to_head(expected)
     expected_str = ListNode.print(expected)
     print(f"\noutput\t\t{output_str}")
     print(f"expected\t{expected_str}")

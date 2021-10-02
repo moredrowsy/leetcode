@@ -56,55 +56,55 @@ class Solution:
 
 if __name__ == "__main__":
     lists = [[1, 4, 5], [1, 3, 4], [2, 6]]
-    lists = [ListNode.get_head_from_list(l) if l else None for l in lists]
+    lists = [ListNode.list_to_head(l) if l else None for l in lists]
     output = Solution().mergeKLists(lists)
     output_str = ListNode.print(output)
     expected = [1, 1, 2, 3, 4, 4, 5, 6]
-    expected = ListNode.get_head_from_list(expected)
+    expected = ListNode.list_to_head(expected)
     expected_str = ListNode.print(expected)
     print(f"\noutput\t\t{output_str}")
     print(f"expected\t{expected_str}")
     print(output_str == expected_str)
 
     lists = [[2, 6], [5], [7]]
-    lists = [ListNode.get_head_from_list(l) if l else None for l in lists]
+    lists = [ListNode.list_to_head(l) if l else None for l in lists]
     output = Solution().mergeKLists(lists)
     output_str = ListNode.print(output)
     expected = [2, 5, 6, 7]
-    expected = ListNode.get_head_from_list(expected)
+    expected = ListNode.list_to_head(expected)
     expected_str = ListNode.print(expected)
     print(f"\noutput\t\t{output_str}")
     print(f"expected\t{expected_str}")
     print(output_str == expected_str)
 
     lists = [[2, 4], [], [-1]]
-    lists = [ListNode.get_head_from_list(l) if l else None for l in lists]
+    lists = [ListNode.list_to_head(l) if l else None for l in lists]
     output = Solution().mergeKLists(lists)
     output_str = ListNode.print(output)
     expected = [-1, 2, 4]
-    expected = ListNode.get_head_from_list(expected)
+    expected = ListNode.list_to_head(expected)
     expected_str = ListNode.print(expected)
     print(f"\noutput\t\t{output_str}")
     print(f"expected\t{expected_str}")
     print(output_str == expected_str)
 
     lists = []
-    lists = [ListNode.get_head_from_list(l) if l else None for l in lists]
+    lists = [ListNode.list_to_head(l) if l else None for l in lists]
     output = Solution().mergeKLists(lists)
     output_str = ListNode.print(output)
     expected = []
-    expected = ListNode.get_head_from_list(expected)
+    expected = ListNode.list_to_head(expected)
     expected_str = ListNode.print(expected)
     print(f"\noutput\t\t{output_str}")
     print(f"expected\t{expected_str}")
     print(output_str == expected_str)
 
     lists = [[]]
-    lists = [ListNode.get_head_from_list(l) if l else None for l in lists]
+    lists = [ListNode.list_to_head(l) if l else None for l in lists]
     output = Solution().mergeKLists(lists)
     output_str = ListNode.print(output)
     expected = []
-    expected = ListNode.get_head_from_list(expected)
+    expected = ListNode.list_to_head(expected)
     expected_str = ListNode.print(expected)
     print(f"\noutput\t\t{output_str}")
     print(f"expected\t{expected_str}")
