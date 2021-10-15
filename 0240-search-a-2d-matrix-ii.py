@@ -1,7 +1,6 @@
 """
 240. Search a 2D Matrix II
 Medium
-https://leetcode.com/problems/search-a-2d-matrix-ii/
 https://www.lintcode.com/problem/38/
 
 Write an efficient algorithm that searches for a value in an m x n matrix, return The number of occurrence of it.
@@ -30,11 +29,11 @@ class Solution:
         """
         Time Complexity
         ---------------
-        O(m*n)
+        O(m+n)
 
         Space Complexity
         ----------------
-        O(m*n)
+        O(1)
         """
         if matrix == [] or matrix[0] == []:
             return 0
@@ -42,6 +41,7 @@ class Solution:
         row, col = len(matrix), len(matrix[0])
         i, j = row - 1, 0
         count = 0
+
         while i >= 0 and j < col:
             if matrix[i][j] == target:
                 count += 1
