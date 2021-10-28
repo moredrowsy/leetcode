@@ -40,7 +40,7 @@ class ListNode:
         return string[:-1]
 
     @classmethod
-    def get_head_from_list(cls, values):
+    def list_to_head(cls, values):
         list_node = dummy = ListNode()
 
         for val in values:
@@ -48,3 +48,13 @@ class ListNode:
             list_node = list_node.next
 
         return dummy.next
+
+    @classmethod
+    def head_to_array(cls,  node):
+        arr = []
+
+        while node:
+            arr.append(node.val)
+            node = node.next
+
+        return arr
