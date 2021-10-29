@@ -19,6 +19,17 @@ class Solution:
     """
 
     def setUnion(self, sets):
+        """
+        The 'sets' is m x n matrix
+
+        Time Complexity
+        ---------------
+        O(m^2 * n)
+
+        Space Complexity
+        ----------------
+        O(m * n)
+        """
         # Build the parents map
         parents = {}
         for s in sets:
