@@ -40,7 +40,7 @@ class Solution:
             if diff in num_index and i != num_index[diff]:
                 return [i, num_index[diff]]
 
-            num_index[nums[i]] = i  # update at end to avoid dup num overwrite
+            num_index[nums[i]] = i  # set at end to avoid comparing itself
 
         return [-1, -1]
 
