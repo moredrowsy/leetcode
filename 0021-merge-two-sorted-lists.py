@@ -21,7 +21,7 @@ class Solution:
 
     Space Complexity
     ----------------
-    O(n)
+    O(1)
     """
 
     def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
@@ -30,21 +30,21 @@ class Solution:
 
         while list1 and list2:
             if list1.val < list2.val:
-                node.next = ListNode(list1.val)
+                node.next = list1
                 list1 = list1.next
             else:
-                node.next = ListNode(list2.val)
+                node.next = list2
                 list2 = list2.next
 
             node = node.next
 
         while list1:
-            node.next = ListNode(list1.val)
+            node.next = list1
             node = node.next
             list1 = list1.next
 
         while list2:
-            node.next = ListNode(list2.val)
+            node.next = list2
             node = node.next
             list2 = list2.next
 
@@ -52,16 +52,6 @@ class Solution:
 
 
 if __name__ == "__main__":
-    list1, list2 = [1, 2, 4], [1, 3, 4]
-    l1 = ListNode.list_to_head(list1)
-    l2 = ListNode.list_to_head(list2)
-    output = Solution().mergeTwoLists(l1, l2)
-    output = ListNode.head_to_array(output)
-    expected = [1, 1, 2, 3, 4, 4]
-    print(f"\noutput\t\t{output}")
-    print(f"expected\t{expected}")
-    print(output == expected)
-
     list1, list2 = [], [0]
     l1 = ListNode.list_to_head(list1)
     l2 = ListNode.list_to_head(list2)
@@ -78,6 +68,16 @@ if __name__ == "__main__":
     output = Solution().mergeTwoLists(l1, l2)
     output = ListNode.head_to_array(output)
     expected = []
+    print(f"\noutput\t\t{output}")
+    print(f"expected\t{expected}")
+    print(output == expected)
+
+    list1, list2 = [1, 2, 4], [1, 3, 4]
+    l1 = ListNode.list_to_head(list1)
+    l2 = ListNode.list_to_head(list2)
+    output = Solution().mergeTwoLists(l1, l2)
+    output = ListNode.head_to_array(output)
+    expected = [1, 1, 2, 3, 4, 4]
     print(f"\noutput\t\t{output}")
     print(f"expected\t{expected}")
     print(output == expected)
