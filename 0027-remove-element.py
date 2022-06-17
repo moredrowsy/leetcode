@@ -32,7 +32,7 @@ class Solution:
         left, right = 0, len(nums) - 1
 
         while left <= right:
-            while nums[right] == val and right > -1:
+            while right > -1 and nums[right] == val:
                 right -= 1
 
             if left <= right and nums[left] == val and right > -1:
