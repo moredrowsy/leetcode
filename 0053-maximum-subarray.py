@@ -26,6 +26,13 @@ class Solution:
         """
         Need to know Kadane's Algorithm.
         How the eff is this 'easy' if we don't know Kadane's Algorithm???
+
+        Kadane's Algoithm explaination: https://www.geeksforgeeks.org/largest-sum-contiguous-subarray/
+        -------------------------------
+        Let L = left pointer, R = right pointer
+        Prefix sum from L+1 to r is max(P[R] - P[L]) = P[L+1, R]
+        In for loop, P[R] is fixed. So to get max, then we need to minimize P[L]
+        Hence, we do prefix_sum - min_sum
         """
         min_sum, max_sum = 0, -sys.maxsize
         prefix_sum = 0
