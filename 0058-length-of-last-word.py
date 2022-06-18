@@ -10,17 +10,16 @@ A word is a maximal substring consisting of non-space characters only.
 
 
 class Solution:
-    """
-    Time Complexity
-    ---------------
-    O(n)
-
-    Space Complexity
-    ----------------
-    O(1)
-    """
-
     def lengthOfLastWord(self, s: str) -> int:
+        """
+        Time Complexity
+        ---------------
+        O(n)
+
+        Space Complexity
+        ----------------
+        O(1)
+        """
         right = len(s) - 1
 
         while right > -1 and s[right] == " ":

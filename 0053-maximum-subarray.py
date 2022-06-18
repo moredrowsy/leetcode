@@ -12,16 +12,6 @@ import sys
 
 
 class Solution:
-    """
-        Time Complexity
-        ---------------
-        O(n)
-
-        Space Complexity
-        ----------------
-        O(1)
-        """
-
     def maxSubArray(self, nums: List[int]) -> int:
         """
         Need to know Kadane's Algorithm.
@@ -33,6 +23,14 @@ class Solution:
         Prefix sum from L+1 to r is max(P[R] - P[L]) = P[L+1, R]
         In for loop, P[R] is fixed. So to get max, then we need to minimize P[L]
         Hence, we do prefix_sum - min_sum
+
+        Time Complexity
+        ---------------
+        O(n)
+
+        Space Complexity
+        ----------------
+        O(1)
         """
         min_sum, max_sum = 0, -sys.maxsize
         prefix_sum = 0

@@ -10,17 +10,16 @@ from list_node import ListNode
 
 
 class Solution:
-    """
-    Time Complexity
-    ---------------
-    O(n)
-
-    Space Complexity
-    ----------------
-    O(1)
-    """
-
     def deleteDuplicates(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        """
+        Time Complexity
+        ---------------
+        O(n)
+
+        Space Complexity
+        ----------------
+        O(1)
+        """
         if not head:
             return head
 

@@ -16,7 +16,8 @@ For the purpose of this problem, we will return 0 when needle is an empty string
 
 
 class Solution:
-    """
+    def strStr(self, haystack: str, needle: str) -> int:
+        """
         Time Complexity
         ---------------
         O(n*m)
@@ -25,8 +26,6 @@ class Solution:
         ----------------
         O(1)
         """
-
-    def strStr(self, haystack: str, needle: str) -> int:
         n, m = len(haystack), len(needle)
 
         for i in range(n):

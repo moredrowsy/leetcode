@@ -9,17 +9,16 @@ from typing import List
 
 
 class Solution:
-    """
-    Time Complexity
-    ---------------
-    O(n)
-
-    Space Complexity
-    ----------------
-    O(n)
-    """
-
     def containsDuplicate(self, nums: List[int]) -> bool:
+        """
+        Time Complexity
+        ---------------
+        O(n)
+
+        Space Complexity
+        ----------------
+        O(n)
+        """
         uniques = set(nums)
 
         return len(nums) != len(uniques)

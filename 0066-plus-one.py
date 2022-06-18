@@ -11,17 +11,16 @@ from typing import List
 
 
 class Solution:
-    """
-    Time Complexity
-    ---------------
-    O(n)
-
-    Space Complexity
-    ----------------
-    O(n)
-    """
-
     def plusOne(self, digits: List[int]) -> List[int]:
+        """
+        Time Complexity
+        ---------------
+        O(n)
+
+        Space Complexity
+        ----------------
+        O(n)
+        """
         digits[-1] += 1
         carry = 0
 

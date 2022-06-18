@@ -13,17 +13,16 @@ Open brackets must be closed in the correct order.
 
 
 class Solution:
-    """
-    Time Complexity
-    ---------------
-    O(n)
-
-    Space Complexity
-    ----------------
-    O(n)
-    """
-
     def isValid(self, s: str) -> bool:
+        """
+        Time Complexity
+        ---------------
+        O(n)
+
+        Space Complexity
+        ----------------
+        O(n)
+        """
         if len(s) <= 1:  # invalid case when only one char
             return False
 

@@ -12,16 +12,6 @@ Note: You are not allowed to use any built-in exponent function or operator, suc
 
 
 class Solution:
-    """
-    Time Complexity
-    ---------------
-    O(log n)
-
-    Space Complexity
-    ----------------
-    O(1)
-    """
-
     def mySqrt(self, x: int) -> int:
         """
         Binary Search
@@ -29,6 +19,14 @@ class Solution:
         Explanation:
         Brute force numbers smaller than sqrtx whereby a*a <= x
         Since, we're searching linearly, can use binary search
+
+        Time Complexity
+        ---------------
+        O(log n)
+
+        Space Complexity
+        ----------------
+        O(1)
         """
         left, right = 0, x
 

@@ -11,17 +11,16 @@ from typing import List
 
 
 class Solution:
-    """
-    Time Complexity
-    ---------------
-    O(log n)
-
-    Space Complexity
-    ----------------
-    O(1)
-    """
-
     def searchInsert(self, nums: List[int], target: int) -> int:
+        """
+        Time Complexity
+        ---------------
+        O(log n)
+
+        Space Complexity
+        ----------------
+        O(1)
+        """
         left, right = 0, len(nums)-1
 
         while left + 1 < right:

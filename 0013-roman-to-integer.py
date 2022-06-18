@@ -25,17 +25,16 @@ Given a roman numeral, convert it to an integer.
 
 
 class Solution:
-    """
-    Time Complexity
-    ---------------
-    O(n)
-
-    Space Complexity
-    ----------------
-    O(1)
-    """
-
     def romanToInt(self, s: str) -> int:
+        """
+        Time Complexity
+        ---------------
+        O(n)
+
+        Space Complexity
+        ----------------
+        O(1)
+        """
         roman_to_int = {
             "I": 1,
             "IV": 4,

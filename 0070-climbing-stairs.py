@@ -10,16 +10,6 @@ Each time you can either climb 1 or 2 steps. In how many distinct ways can you c
 
 
 class Solution:
-    """
-    Time Complexity
-    ---------------
-    O(n)
-
-    Space Complexity
-    ----------------
-    O(n)
-    """
-
     def climbStairs(self, n: int) -> int:
         """
         Type: dynamic programming
@@ -32,6 +22,14 @@ class Solution:
         The number of possibilities for n=4 stairs: 2+3=5
         The number of possibilities for n stairs is the previous two
         In other words, the fibonnaci sequence.
+
+        Time Complexity
+        ---------------
+        O(n)
+
+        Space Complexity
+        ----------------
+        O(n)
         """
         if n < 3:
             return n

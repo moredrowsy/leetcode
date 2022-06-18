@@ -11,17 +11,16 @@ from typing import List
 
 
 class Solution:
-    """
-    Time Complexity
-    ---------------
-    O(n^2)
-
-    Space Complexity
-    ----------------
-    O(n)
-    """
-
     def longestCommonPrefix(self, strs: List[str]) -> str:
+        """
+        Time Complexity
+        ---------------
+        O(n^2)
+
+        Space Complexity
+        ----------------
+        O(n)
+        """
         n = len(strs)
         prefix = ""
 

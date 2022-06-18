@@ -15,17 +15,16 @@ from typing import List
 
 
 class Solution:
-    """
-    Time Complexity
-    ---------------
-    O(n)
-
-    Space Complexity
-    ----------------
-    O(1)
-    """
-
     def removeElement(self, nums: List[int], val: int) -> int:
+        """
+        Time Complexity
+        ---------------
+        O(n)
+
+        Space Complexity
+        ----------------
+        O(1)
+        """
         if len(nums) == 0:
             return 0
 

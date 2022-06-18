@@ -8,17 +8,16 @@ Given two binary strings a and b, return their sum as a binary string.
 
 
 class Solution:
-    """
-    Time Complexity
-    ---------------
-    O(n)
-
-    Space Complexity
-    ----------------
-    O(n)
-    """
-
     def addBinary(self, a: str, b: str) -> str:
+        """
+        Time Complexity
+        ---------------
+        O(n)
+
+        Space Complexity
+        ----------------
+        O(n)
+        """
         m, n = len(a)-1, len(b)-1
         binary = ""
         carry = 0
