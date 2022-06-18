@@ -26,6 +26,12 @@ class Solution:
     def merge(self, nums1: List[int], m: int, nums2: List[int], n: int) -> None:
         """
         In-place merge sort
+        Explanation
+        -----------
+        Compare last elements of nums1 and nums2
+        a) Last item in nums1 is < than nums2's, then move nums2's to end
+        b) Last item in nums1 is >= than nums2's, then move nums1's last to end
+        c) If nums2 stil have items, copy from nums1 begining to end of nums2's
 
         Time Complexity
         ---------------
@@ -36,15 +42,20 @@ class Solution:
         O(1)
         """
         while m > 0 and n > 0:
-            if nums1[m-1] >= nums2[n-1]:
-                nums1[m+n-1] = nums1[m-1]
-                m -= 1
-            else:
+            # if nums1 last is smaller than nums2 last, move nums2 last to end
+            if nums1[m-1] < nums2[n-1]:
                 nums1[m+n-1] = nums2[n-1]
                 n -= 1
+            # if nums1 last is larger than nums2 last, move nums1 last to end
+            else:
+                nums1[m+n-1] = nums1[m-1]
+                m -= 1
 
+        # if nums2 has items, copy to nums1 left -> right from index 0
+        # if nums1 has items, than that means it's sorted; no action needed
         if n > 0:
-            nums1[:n] = nums2[:n]
+            for i in range(n):
+                nums1[i] = nums2[i]
 
     def merge1(self, nums1: List[int], m: int, nums2: List[int], n: int) -> None:
         """
@@ -84,6 +95,24 @@ class Solution:
 
 
 if __name__ == "__main__":
+    nums1, m = [6, 0, 0, 0, 0, 0], 1
+    nums2, n = [1, 2, 2, 3, 5], 5
+    Solution().merge(nums1, m, nums2, n)
+    output = nums1
+    expected = [1, 2, 2, 3, 5, 6]
+    print(f"\noutput\t\t{output}")
+    print(f"expected\t{expected}")
+    print(output == expected)
+
+    nums1, m = [1, 2, 0, 0, 0, 0], 2
+    nums2, n = [2, 3, 5, 6], 4
+    Solution().merge(nums1, m, nums2, n)
+    output = nums1
+    expected = [1, 2, 2, 3, 5, 6]
+    print(f"\noutput\t\t{output}")
+    print(f"expected\t{expected}")
+    print(output == expected)
+
     nums1, m = [1, 2, 3, 0, 0, 0], 3
     nums2, n = [2, 5, 6], 3
     Solution().merge(nums1, m, nums2, n)
