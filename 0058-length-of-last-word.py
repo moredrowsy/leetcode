@@ -49,14 +49,14 @@ if __name__ == "__main__":
     print(f"expected\t{expected}")
     print(output == expected)
 
-    s = s = "luffy is still joyboy"
+    s = "luffy is still joyboy"
     output = Solution().lengthOfLastWord(s)
     expected = 6
     print(f"\noutput\t\t{output}")
     print(f"expected\t{expected}")
     print(output == expected)
 
-    s = s = "Today is a nice day"
+    s = "Today is a nice day"
     output = Solution().lengthOfLastWord(s)
     expected = 3
     print(f"\noutput\t\t{output}")
