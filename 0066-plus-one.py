@@ -23,19 +23,19 @@ class Solution:
 
     def plusOne(self, digits: List[int]) -> List[int]:
         digits[-1] += 1
-        remainder = 0
+        carry = 0
 
         n = len(digits)-1
         for i in range(n, -1, -1):
-            digits[i] += remainder
+            digits[i] += carry
 
             if digits[i] > 9:
                 digits[i] = 0
-                remainder = 1
+                carry = 1
             else:
-                remainder = 0
+                carry = 0
 
-        if remainder:
+        if carry:
             digits = [1] + digits
 
         return digits

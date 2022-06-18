@@ -19,58 +19,25 @@ class Solution:
     """
 
     def addBinary(self, a: str, b: str) -> str:
-        m, n = len(a), len(b)
-        m -= 1
-        n -= 1
+        m, n = len(a)-1, len(b)-1
         binary = ""
-        remainder = 0
+        carry = 0
 
-        while m > -1 and n > -1:
-            sum_ = int(a[m]) + int(b[n]) + remainder
+        while m > -1 or n > -1:
+            x = int(a[m]) if m > -1 else 0
+            y = int(b[n]) if n > -1 else 0
 
-            result = self.helper(sum_, binary)
-            binary = result[0]
-            remainder = result[1]
+            sum_ = x + y + carry
+            binary = str(sum_ % 2) + binary
+            carry = sum_ // 2
 
             m -= 1
             n -= 1
 
-        while m > -1:
-            sum_ = int(a[m]) + remainder
-
-            result = self.helper(sum_, binary)
-            binary = result[0]
-            remainder = result[1]
-
-            m -= 1
-
-        while n > -1:
-            sum_ = int(b[n]) + remainder
-
-            result = self.helper(sum_, binary)
-            binary = result[0]
-            remainder = result[1]
-
-            n -= 1
-
-        if remainder:
-            binary = str(remainder) + binary
+        if carry:
+            binary = "1" + binary
 
         return binary
-
-    def helper(self, sum_, binary):
-        remainder = 0
-
-        if sum_ == 2:
-            remainder = 1
-            binary = "0" + binary
-        elif sum_ == 3:
-            remainder = 1
-            binary = "1" + binary
-        else:
-            binary = str(sum_) + binary
-
-        return [binary, remainder]
 
 
 if __name__ == "__main__":
