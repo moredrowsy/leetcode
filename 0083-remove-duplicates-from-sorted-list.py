@@ -17,7 +17,7 @@ class Solution:
 
     Space Complexity
     ----------------
-    O(n)
+    O(1)
     """
 
     def deleteDuplicates(self, head: Optional[ListNode]) -> Optional[ListNode]:
