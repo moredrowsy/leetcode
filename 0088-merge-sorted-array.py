@@ -29,47 +29,70 @@ class Solution:
 
         Time Complexity
         ---------------
-        O(2n)
+        O(n)
 
         Space Complexity
         ----------------
-        O(2n)
+        O(n)
         """
+        left, right = 0, 0
         tmp = []
-        i, j = 0, 0  # i is left walker, j is right walker
 
-        # Merge left and right
-        while i < m and j < n:
-            if nums1[i] < nums2[j]:
-                tmp.append(nums1[i])
-                i += 1
+        while left < m and right < n:
+            if nums1[left] < nums2[right]:
+                tmp.append(nums1[left])
+                left += 1
             else:
-                tmp.append(nums2[j])
-                j += 1
+                tmp.append(nums2[right])
+                right += 1
 
-        # Merge leftover values on left side
-        while i < m:
-            tmp.append(nums1[i])
-            i += 1
+        while left < m:
+            tmp.append(nums1[left])
+            left += 1
 
-        # Merge leftover values on right side
-        while j < n:
-            tmp.append(nums2[j])
-            j += 1
+        while right < n:
+            tmp.append(nums2[right])
+            right += 1
 
-        # Copy tmp back into nums for in-place sorting
-        p = len(tmp)
-        for k in range(p):
-            nums1[k] = tmp[k]
+        for i in range(m+n):
+            nums1[i] = tmp[i]
+
+        return nums1
 
 
 if __name__ == "__main__":
     nums1, m = [1, 2, 3, 0, 0, 0], 3
     nums2, n = [2, 5, 6], 3
-
     Solution().merge(nums1, m, nums2, n)
     output = nums1
     expected = [1, 2, 2, 3, 5, 6]
+    print(f"\noutput\t\t{output}")
+    print(f"expected\t{expected}")
+    print(output == expected)
+
+    nums1, m = [1, 5, 6,  0, 0, 0], 3
+    nums2, n = [2,  2, 3], 3
+    Solution().merge(nums1, m, nums2, n)
+    output = nums1
+    expected = [1, 2, 2, 3, 5, 6]
+    print(f"\noutput\t\t{output}")
+    print(f"expected\t{expected}")
+    print(output == expected)
+
+    nums1, m = [1], 1
+    nums2, n = [], 0
+    Solution().merge(nums1, m, nums2, n)
+    output = nums1
+    expected = [1]
+    print(f"\noutput\t\t{output}")
+    print(f"expected\t{expected}")
+    print(output == expected)
+
+    nums1, m = [0], 0
+    nums2, n = [1], 1
+    Solution().merge(nums1, m, nums2, n)
+    output = nums1
+    expected = [1]
     print(f"\noutput\t\t{output}")
     print(f"expected\t{expected}")
     print(output == expected)
