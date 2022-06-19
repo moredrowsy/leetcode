@@ -23,30 +23,25 @@ class Solution:
         ----------------
         O(n)
         """
-        if len(s) <= 1:  # invalid case when only one char
-            return False
-
+        matches = {
+            "(": ")",
+            "{": "}",
+            "[": "]"
+        }
         stack = []
 
-        for char in s:
-            if char == "(" or char == "{" or char == "[":
-                stack.append(char)
+        for ch in s:
+            if ch in matches:
+                stack.append(ch)
             else:
-                if not stack:  # invalid if empty stack has no complement char
+                if not stack:
                     return False
 
-                match = stack.pop()
-
-                if match == "(" and char != ")":
+                open_ = stack.pop()
+                if ch != matches[open_]:
                     return False
 
-                if match == "{" and char != "}":
-                    return False
-
-                if match == "[" and char != "]":
-                    return False
-
-        return True if not stack else False  # invalid if stack still have chars
+        return True if not stack else False
 
 
 if __name__ == "__main__":
