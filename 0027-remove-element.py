@@ -31,12 +31,13 @@ class Solution:
         left, right = 0, len(nums) - 1
 
         while left <= right:
-            while right > -1 and nums[right] == val:
+            while right >= 0 and nums[right] == val:
                 right -= 1
 
-            if left <= right and nums[left] == val and right > -1:
+            if left <= right and right >= 0 and nums[left] == val:
                 nums[left], nums[right] = nums[right], nums[left]
                 right -= 1
+
             left += 1
 
         return right + 1
