@@ -26,23 +26,32 @@ class Solution:
         ----------------
         O(1)
         """
-        n, m = len(haystack), len(needle)
+        m, n = len(haystack), len(needle)
 
-        for i in range(n):
+        for i in range(m):
             j = 0
 
-            while j < m and i+j < n:
+            while j < n and i+j < m:
                 if needle[j] != haystack[i+j]:
                     break
                 j += 1
 
-            if j == m:
+            # base case is taken care of when needle is empty
+            # m is 0 and then j is also 0 because whlle loop does not exec
+            if j == n:
                 return i
 
         return -1
 
 
 if __name__ == "__main__":
+    haystack, needle = "hello", ""
+    output = Solution().strStr(haystack, needle)
+    expected = 0
+    print(f"\noutput\t\t{output}")
+    print(f"expected\t{expected}")
+    print(output == expected)
+
     haystack, needle = "hello", "ll"
     output = Solution().strStr(haystack, needle)
     expected = 2
