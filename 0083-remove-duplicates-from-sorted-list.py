@@ -20,21 +20,16 @@ class Solution:
         ----------------
         O(1)
         """
-        if not head:
-            return head
+        if head:
+            p, q = head, head.next
 
-        prev = head
-        node = prev.next
-        uniques = set([head.val])
+            while p and q:
+                if p.val == q.val:
+                    p.next = q.next
+                else:
+                    p = p.next
 
-        while node:
-            if node.val in uniques:
-                prev.next = node.next
-                node = node.next
-            else:
-                uniques.add(node.val)
-                prev = node
-                node = node.next
+                q = q.next
 
         return head
 
