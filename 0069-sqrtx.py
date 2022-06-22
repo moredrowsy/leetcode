@@ -38,6 +38,7 @@ class Solution:
             else:
                 right = root
 
+        # check right first b/c left can be 0 if not moved != answer
         if right * right <= x:
             return right
         return left
