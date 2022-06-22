@@ -31,12 +31,10 @@ class Solution:
         if p.val != q.val:
             return False
 
-        isSame = self.isSameTree(p.left, q.left)
-
-        if not isSame:
+        if not self.isSameTree(p.left, q.left):
             return False
 
-        return self.isSameTree(p.right, q.right) and isSame
+        return self.isSameTree(p.right, q.right)
 
 
 if __name__ == "__main__":
