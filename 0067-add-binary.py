@@ -22,9 +22,9 @@ class Solution:
         binary = ""
         carry = 0
 
-        while m > -1 or n > -1:
-            x = int(a[m]) if m > -1 else 0
-            y = int(b[n]) if n > -1 else 0
+        while m >= 0 or n >= 0:
+            x = int(a[m]) if m >= 0 else 0
+            y = int(b[n]) if n >= 0 else 0
 
             sum_ = x + y + carry
             binary = str(sum_ % 2) + binary
@@ -33,10 +33,7 @@ class Solution:
             m -= 1
             n -= 1
 
-        if carry:
-            binary = "1" + binary
-
-        return binary
+        return str(carry) + binary if carry else binary
 
 
 if __name__ == "__main__":

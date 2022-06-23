@@ -21,23 +21,18 @@ class Solution:
         ----------------
         O(n)
         """
-        digits[-1] += 1
-        carry = 0
+        carry = 1
 
         n = len(digits)-1
         for i in range(n, -1, -1):
-            digits[i] += carry
+            if carry == 0:
+                return digits
 
-            if digits[i] > 9:
-                digits[i] = 0
-                carry = 1
-            else:
-                carry = 0
+            sum_ = digits[i] + carry
+            digits[i] = sum_ % 10
+            carry = sum_ // 10
 
-        if carry:
-            digits = [1] + digits
-
-        return digits
+        return [carry] + digits if carry else digits
 
 
 if __name__ == "__main__":
