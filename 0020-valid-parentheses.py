@@ -23,7 +23,7 @@ class Solution:
         ----------------
         O(n)
         """
-        matches = {
+        brackets = {
             "(": ")",
             "{": "}",
             "[": "]"
@@ -31,17 +31,17 @@ class Solution:
         stack = []
 
         for ch in s:
-            if ch in matches:
+            if ch in brackets:
                 stack.append(ch)
             else:
                 if not stack:
                     return False
 
-                open_ = stack.pop()
-                if ch != matches[open_]:
+                v = stack.pop()
+                if brackets[v] != ch:
                     return False
 
-        return True if not stack else False
+        return not stack
 
 
 if __name__ == "__main__":

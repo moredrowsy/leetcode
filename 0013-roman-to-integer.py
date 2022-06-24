@@ -35,41 +35,28 @@ class Solution:
         ----------------
         O(1)
         """
-        roman_to_int = {
+        ROMAN = {
             "I": 1,
-            "IV": 4,
-            "IX": 9,
             "V": 5,
             "X": 10,
-            "XL": 40,
-            "XC": 90,
             "L": 50,
             "C": 100,
-            "CD": 400,
-            "CM": 900,
             "D": 500,
-            "M": 1000,
+            "M": 1000
         }
 
-        n = len(s)
-        num = 0
+        i = len(s)-2
+        sum_ = ROMAN[s[-1]]
 
-        i = 0
-        while i + 1 < n:
-            duo = s[i:i+2]
-
-            if duo in roman_to_int:
-                num += roman_to_int[duo]
-                i += 2
+        while i >= 0:
+            if ROMAN[s[i]] < ROMAN[s[i+1]]:
+                sum_ -= ROMAN[s[i]]
             else:
-                num += roman_to_int[s[i]]
-                i += 1
+                sum_ += ROMAN[s[i]]
 
-        if i < n:
-            num += roman_to_int[s[i]]
-            n += 1
+            i -= 1
 
-        return num
+        return sum_
 
 
 if __name__ == "__main__":
