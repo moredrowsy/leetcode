@@ -19,7 +19,7 @@ from typing import List
 
 class Solution:
     def search(self, nums: List[int], target: int) -> int:
-        return self.bs_recursion(nums, target, 0, len(nums)-1)
+        return self.bs_iteration(nums, target)
 
     def bs_recursion(self, nums: List[int], target: int, left: int, right: int) -> int:
         if left + 1 < right:
