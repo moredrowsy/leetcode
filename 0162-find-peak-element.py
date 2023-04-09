@@ -74,7 +74,7 @@ class Solution:
             mid = (left + right) // 2
 
             # Mountain peak
-            if nums[mid-1] < nums[mid] and nums[mid] > nums[mid+1]:
+            if nums[mid-1] < nums[mid] > nums[mid+1]:
                 return mid
             # ascending, go right
             elif nums[mid-1] < nums[mid]:
