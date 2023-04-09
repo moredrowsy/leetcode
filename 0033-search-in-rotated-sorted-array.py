@@ -33,20 +33,19 @@ class Solution:
         ----------------
         O(1)
         """
-        left, right = 0, len(nums) - 1
+        n = len(nums)
+        left, right = 0, n-1
 
         while left + 1 < right:
             mid = (left + right) // 2
 
-            if target == nums[mid]:
-                return mid
-            elif nums[left] <= nums[mid]:
-                if target < nums[mid] and target >= nums[left]:
+            if nums[left] <= nums[mid]:
+                if nums[left] <= target <= nums[mid]:
                     right = mid
                 else:
                     left = mid
             else:
-                if target > nums[mid] and target <= nums[right]:
+                if nums[mid] <= target <= nums[right]:
                     left = mid
                 else:
                     right = mid
