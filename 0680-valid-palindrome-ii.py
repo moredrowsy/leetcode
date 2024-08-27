@@ -19,8 +19,11 @@ class Solution:
     abbad: Delete d and it's valid -> abba
     acbba: Delete c and it's valid -> abba
     """
-
     def validPalindrome(self, s: str) -> bool:
+      # return self.validPalindrome_ii(s)
+      return self.validPalindrome_jiuzhang(s)
+
+    def validPalindrome_ii(self, s: str) -> bool:
         """
         1. Find if original string is symmetric.
         2. If not symmetric, produce two variants
@@ -98,6 +101,37 @@ class Solution:
             begin += 1
         return (True, begin, end-begin)
 
+    def validPalindrome_jiuzhang(self, s):
+        """
+        1. Find two pointers of letters that don't match
+        2. Recurse into with left skip or right skip to find next two pointers
+        3. If two pointer overlaps, it is a palindrome
+
+        Time Complexity
+        ---------------
+        O(2n)
+
+        Space Complexity
+        ----------------
+        O(1)
+        """
+        left, right = self.twoPointer(s, 0, len(s) - 1)
+        if left >= right:
+            return True
+
+        return self.isPalindrome(s, left + 1, right) or self.isPalindrome(s, left, right - 1)
+
+    def isPalindrome(self, s, left, right):
+        left, right = self.twoPointer(s, left, right)
+        return left >= right
+
+    def twoPointer(self, s, left, right):
+        while left < right:
+            if s[left] != s[right]:
+                return left, right
+            left += 1
+            right -= 1
+        return left, right
 
 if __name__ == "__main__":
     s = "acbba"
