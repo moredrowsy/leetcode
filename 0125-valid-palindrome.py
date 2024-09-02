@@ -69,6 +69,9 @@ class Solution:
             while r > -1 and not s[r].isalnum():
                 r -= 1
 
+            if l >= n or r <= -1:
+                return True
+
             if s[l].upper() != s[r].upper():
                 return False
 
