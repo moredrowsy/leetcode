@@ -28,6 +28,8 @@ class Solution:
         subsets.append(subset[:])
 
         for i in range(index, len(nums)):
+            if i > index and nums[i-1] == nums[i]:
+                continue
             subset.append(nums[i])
             self.dfs(nums, i+1, subset, subsets)
             subset.pop()
