@@ -42,6 +42,14 @@ class Solution:
         Do the same for subset
         At every loop, pop both subset and index.
         At end of loop, subset is your answer
+
+        Time Complexity
+        ---------------
+        O(E+V)
+
+        Space Complexity
+        ----------------
+        O(E+V)
         """
         subsets = []
         subset = []
@@ -49,8 +57,8 @@ class Solution:
         n = len(nums)
 
         while stack:
-            if stack:
-              index = stack.pop()
+            index = stack.pop()
+
             if subset:
               subset.pop()
 
