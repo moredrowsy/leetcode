@@ -18,13 +18,49 @@ class Solution:
     def permute(self, nums: List[int]) -> List[List[int]]:
         output = []
 
-        if nums:
-            nums.sort()
-            visited = set()
-            permutation = []
-            self.dfs(nums, visited, permutation, output)
+        # if nums:
+        #     nums.sort()
+        #     visited = set()
+        #     permutation = []
+        #     self.dfs(nums, visited, permutation, output)
+
+        self.dfs_iter(nums, output)
 
         return output
+
+    def dfs_iter(self, nums, permutations):
+        if nums is None:
+            return []
+        if nums == []:
+            return [[]]
+
+        nums.sort()
+        permutation = []
+        stack = [-1]
+        n = len(nums)
+
+        while stack:
+            index = stack.pop()
+            index += 1
+
+            while index < n:
+                if nums[index] not in permutation:
+                    break
+                index += 1
+            else:
+                if len(permutation):
+                    permutation.pop()
+                continue
+
+            stack.append(index)
+            stack.append(-1)
+            permutation.append(nums[index])
+
+            if len(permutation) == len(nums):
+                permutations.append(list(permutation))
+
+        return permutations
+
 
     def dfs(self, nums: List[int], visited, permutation, output):
         """Preorder traversal"""
