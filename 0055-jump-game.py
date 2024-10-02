@@ -31,6 +31,9 @@ class Solution:
         dp = [False] * n
         dp[0] = True
 
+        # i is the number of jumps we need for the position
+        # j is the number of jumps we did previously
+        # nums[j] is the number of jumps available for that position
         for i in range(1, n):
             for j in range(i):
                 if dp[j] and j + nums[j] >= i:
