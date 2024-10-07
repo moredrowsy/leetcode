@@ -14,42 +14,38 @@ int sumRange(int left, int right) Returns the sum of the elements of nums betwee
 from typing import List
 
 class NumArray:
-  def __init__(self, nums: List[int]) -> None:
-    if nums and len(nums) > 0:
-      self.nums = nums
-      self.prefix = self._prefix_sum(nums)
+    def __init__(self, nums: List[int]) -> None:
+        if nums and len(nums) > 0:
+            self.nums = nums
+            self.prefix_sum = self.get_prefix_sum(nums)
 
-  def sumRange(self, left: int, right: int) -> int:
-    if self.nums is None:
-      return 0
+    def sumRange(self, left: int, right: int) -> int:
+        if self.nums is None:
+            return 0
 
-    if left == 0:
-      return self.prefix[right]
+        return self.prefix_sum[right + 1] - self.prefix_sum[left]
 
-    return self.prefix[right] - self.prefix[left-1]
+    def get_prefix_sum(self, nums: List[int]):
+        n = len(nums)
+        prefix_sum = [0]
 
-  def _prefix_sum(self, nums: List[int]):
-    n = len(nums)
-    prefix = [0] * n
-    prefix[0] = nums[0]
+        for num in nums:
+            prefix_sum.append(prefix_sum[-1] + num)
 
-    for i in range(1, n):
-      prefix[i] = prefix[i-1] + nums[i]
-
-    return prefix
+        return prefix_sum
 
 if __name__ == "__main__":
     nums = [-2, 0, 3, -5, 2, -1]
     numArray = NumArray(nums)
     args = [
-      [0, 2],
-      [2, 5],
-      [0, 5]
+        [0, 2],
+        [2, 5],
+        [0, 5]
     ]
     outputs = []
     for arg in args:
-      output = numArray.sumRange(arg[0], arg[1])
-      outputs.append(output)
+        output = numArray.sumRange(arg[0], arg[1])
+        outputs.append(output)
     expected = [1, -1, -3]
     print(f"\noutput\t\t{outputs}")
     print(f"expected\t{expected}")
