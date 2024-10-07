@@ -51,3 +51,11 @@ if __name__ == "__main__":
     print(f"\noutput\t\t{output}")
     print(f"expected\t{expected}")
     print(output == expected)
+
+    nums = [2,1,-1,4,2,-3]
+    k = 3
+    output = Solution().subarray_sum_equals_k_i_i(nums, k)
+    expected = 2
+    print(f"\noutput\t\t{output}")
+    print(f"expected\t{expected}")
+    print(output == expected)
